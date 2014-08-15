@@ -34,6 +34,18 @@ Tags: mysql,gem,mysql2,mysql 5.6.12 If you installed the latest mysql with &hell
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-53880939-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
@@ -61,7 +73,7 @@ Tags: mysql,gem,mysql2,mysql 5.6.12 If you installed the latest mysql with &hell
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
   <li><a href="/about">About</a></li>
-  <li><a href="/blog/categories/russian">Russian</a></li>
+  <li><a href="/blog/categories/russian/">Russian</a></li>
 </ul>
 
 </nav>
@@ -109,57 +121,12 @@ Tags: mysql,gem,mysql2,mysql 5.6.12</p>
 <pre><code>gem install mysql2
 </code></pre>
 
-<p>will output</p>
-
-<pre><code> /Users/anton/.rbenv/versions/1.9.3-p286/bin/ruby extconf.rb 
-checking for rb_thread_blocking_region()... yes
-checking for rb_wait_for_single_fd()... yes
-checking for mysql.h... no
-checking for mysql/mysql.h... no
------
-mysql.h is missing.  please check your installation of mysql and try again.
------
-*** extconf.rb failed ***
-Could not create Makefile due to some reason, probably lack of
-necessary libraries and/or headers.  Check the mkmf.log file for more
-details.  You may need configuration options.
-
-....
-</code></pre>
-
-<p>after checking forums, relinking include paths and failing at everything else, turns out it doesn&rsquo;t work for mysql version 5.6.12, so that answer on stackoverflow helped me.</p>
-
-<p><a href="http://stackoverflow.com/a/17252887/987533">http://stackoverflow.com/a/17252887/987533</a></p>
-
-<p>Copy of solution:</p>
-
-<p>Uninstall MySQL 5.6.12:</p>
-
-<pre><code>brew unlink mysql
-brew uninstall mysql
-</code></pre>
-
-<p>Go to the homebrew directory:</p>
-
-<pre><code>cd /usr/local
-</code></pre>
-
-<p>Go to version 5.6.10 (you can find a list of versions by running brew versions mysql:</p>
-
-<pre><code>git checkout 48f7e86 Library/Formula/mysql.rb
-</code></pre>
-
-<p>Then install mysql again:</p>
-
-<pre><code>brew install mysql
-</code></pre>
-
-<p>And install gem</p>
-
-<pre><code>gem install mysql2
-</code></pre>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/24/mysql2-install/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -321,37 +288,12 @@ Tags: terminal,iterm,rubymine,open path,quick open</p>
 
 <p>You can use RubyMine for editing but still run tests in terminal. With this tip you can click path in terminal and open that file in RubyMine.</p>
 
-<p>Open iTerm preferences -> Profiles -> Advanced -> Semantic History</p>
-
-<p>Select <strong>Run command</strong> and paste</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>/Applications/RubyMine.app/Contents/MacOS/rubymine <span class="se">\5</span> --line <span class="se">\2</span> <span class="se">\1</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So now when you see some paths in your terminal use <strong>Cmd+Left click</strong> to open it in RubyMine.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>rspec ./spec/models/profile_spec.rb:37
-</span><span class='line'>rspec ./spec/models/channel_spec.rb:13
-</span><span class='line'>rspec ./spec/models/stat_spec.rb:78
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Happy coding!</p>
-
-<p>References:</p>
-
-<ul>
-<li><a href="https://coderwall.com/p/b7e82q">Quickly open files in iTerm with Cmd+Click</a></li>
-<li><a href="http://www.jetbrains.com/ruby/webhelp/working-with-rubymine-features-from-command-line.html">Working with RubyMine Features from Command Line</a></li>
-</ul>
-
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/03/06/iterm/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -576,11 +518,11 @@ Tags: terminal,iterm,rubymine,open path,quick open</p>
   
   <div class="pagination">
     
-      <a class="prev" href="3">&larr; Older</a>
+      <a class="prev" href="/posts/3">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
-    <a class="next" href="1">Newer &rarr;</a>
+    <a class="next" href="/index.html">Newer &rarr;</a>
     
   </div>
 </div>
@@ -673,6 +615,14 @@ Tags: terminal,iterm,rubymine,open path,quick open</p>
 }(document, 'script', 'facebook-jssdk'));</script>
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 

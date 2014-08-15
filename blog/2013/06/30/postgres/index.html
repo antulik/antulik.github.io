@@ -4,6 +4,9 @@ Tags: rails,activerecord,postgres,index,order by,slow query,sorted index</p>
 
 <p>Today was trying to figure out why my query was running very and very slow.</p>
 
+<!--more-->
+
+
 <pre><code>SELECT "events".* FROM "events" WHERE "events"."calendar_id" = 24 AND (start &gt;= '2012-01-01 00:00:00.000000') AND (start &lt; '2013-01-01 00:00:00.000000') ORDER BY size desc LIMIT 200
 </code></pre>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Anton Katunin]]></title>
   <link href="http://antulik.github.io/atom.xml" rel="self"/>
   <link href="http://antulik.github.io/"/>
-  <updated>2014-08-15T22:18:07+04:00</updated>
+  <updated>2014-08-15T22:55:37+04:00</updated>
   <id>http://antulik.github.io/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
@@ -123,6 +123,9 @@
     
     <content type="html"><![CDATA[<p>I&rsquo;m using <a href="http://pow.cx/">POW</a> as a proxy to my local dev server in development. That gives me nice local *.dev domain names. However I&rsquo;ve noticed that it takes 10 seconds to load a singe page in Chrome. Of course, I thought, It does like 80 requests as each asset is served as a separate file in development. But after investigating it a bit more DNS lookup for each request was 3 seconds and for some reasons it was like that for every single http request.</p>
 
+<!--more-->
+
+
 <p>After looking around turns out that the issue DNS resolver checks my main DNS server first if it knows anything about *.dev domains, if not then it checks the next dns server and so on. Which results in 3 seconds delay.</p>
 
 <p>Solution.
@@ -152,6 +155,9 @@ First thing. I had &lsquo;default&rsquo; rule in pow to proxy port 3000 if now s
     <id>http://antulik.github.io/blog/2013/08/08/rake-newrelic</id>
     
     <content type="html"><![CDATA[<p>NewRelic service is great for application monitoring and errors tracking. However it doesn&rsquo;t track rake exceptions by default. You can use <a href="https://airbrake.io">AirBrake</a> gem and service, but sometimes it&rsquo;s too much for you. Fortunately with a bit of ruby it&rsquo;s easy to do it yourself.</p>
+
+<!--more-->
+
 
 <p>Create a small module to hook into rake library at <code>lib/rake_notifier.rb</code></p>
 
@@ -200,6 +206,9 @@ Tags: rubymine,zeus,rubymine momiji,rubymine 6</p>
 
 <p>The first version of RubyMine with Zeus support was released last week. This is a small tip how to get it working.</p>
 
+<!--more-->
+
+
 <p>First make sure you are running at least <code>0.13.4.pre2</code> version of zeus. In your Gemfile:</p>
 
 <pre><code>gem 'zeus', '0.13.4.pre2'
@@ -236,6 +245,9 @@ Date: 2013-06-30
 Tags: rails,activerecord,postgres,index,order by,slow query,sorted index</p>
 
 <p>Today was trying to figure out why my query was running very and very slow.</p>
+
+<!--more-->
+
 
 <pre><code>SELECT "events".* FROM "events" WHERE "events"."calendar_id" = 24 AND (start &gt;= '2012-01-01 00:00:00.000000') AND (start &lt; '2013-01-01 00:00:00.000000') ORDER BY size desc LIMIT 200
 </code></pre>
@@ -278,6 +290,9 @@ Tags: mysql,gem,mysql2,mysql 5.6.12</p>
 
 <pre><code>gem install mysql2
 </code></pre>
+
+<!--more-->
+
 
 <p>will output</p>
 
@@ -390,6 +405,9 @@ Date: 2013-03-06
 Tags: terminal,iterm,rubymine,open path,quick open</p>
 
 <p>You can use RubyMine for editing but still run tests in terminal. With this tip you can click path in terminal and open that file in RubyMine.</p>
+
+<!--more-->
+
 
 <p>Open iTerm preferences -> Profiles -> Advanced -> Semantic History</p>
 

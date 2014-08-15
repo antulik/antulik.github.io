@@ -32,6 +32,18 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-53880939-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
@@ -59,7 +71,7 @@
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
   <li><a href="/about">About</a></li>
-  <li><a href="/blog/categories/russian">Russian</a></li>
+  <li><a href="/blog/categories/russian/">Russian</a></li>
 </ul>
 
 </nav>
@@ -350,24 +362,12 @@
 
   <div class="entry-content"><p>I&rsquo;m using <a href="http://pow.cx/">POW</a> as a proxy to my local dev server in development. That gives me nice local *.dev domain names. However I&rsquo;ve noticed that it takes 10 seconds to load a singe page in Chrome. Of course, I thought, It does like 80 requests as each asset is served as a separate file in development. But after investigating it a bit more DNS lookup for each request was 3 seconds and for some reasons it was like that for every single http request.</p>
 
-<p>After looking around turns out that the issue DNS resolver checks my main DNS server first if it knows anything about *.dev domains, if not then it checks the next dns server and so on. Which results in 3 seconds delay.</p>
-
-<p>Solution.
-First thing. I had &lsquo;default&rsquo; rule in pow to proxy port 3000 if now specific domains was matched. So I&rsquo;ve added app specific domain I was using for the development -> storyline which gave me storyline.dev</p>
-
-<p>Second. I&rsquo;ve installed <a href="https://github.com/Rodreegez/powder">powder</a></p>
-
-<pre><code>gem install powder
-</code></pre>
-
-<p>and used host command to write my domains into the /etc/hosts file</p>
-
-<pre><code>powder host
-</code></pre>
-
-<p>after that DNS lookup decreased from 3s to 1ms. Pretty good time saver.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/09/01/pow/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -405,37 +405,12 @@ First thing. I had &lsquo;default&rsquo; rule in pow to proxy port 3000 if now s
 
   <div class="entry-content"><p>NewRelic service is great for application monitoring and errors tracking. However it doesn&rsquo;t track rake exceptions by default. You can use <a href="https://airbrake.io">AirBrake</a> gem and service, but sometimes it&rsquo;s too much for you. Fortunately with a bit of ruby it&rsquo;s easy to do it yourself.</p>
 
-<p>Create a small module to hook into rake library at <code>lib/rake_notifier.rb</code></p>
-
-<pre><code>module RakeNotifier
-  def self.included(klass)
-    klass.class_eval do
-      alias_method :display_error_message_without_log, :display_error_message
-      alias_method :display_error_message, :display_error_message_with_log
-    end
-  end
-
-  def display_error_message_with_log(ex)
-    ::NewRelic::Agent.notice_error(ex)
-    display_error_message_without_log(ex)
-  end
-end
-</code></pre>
-
-<p>And then hook it up in the rails initialiser <code>config/initializers/rake_notifier_hook.rb</code></p>
-
-<pre><code>if defined?(::Rake)
-  Rake.application.instance_eval do
-    class &lt;&lt; self
-      include RakeNotifier
-    end
-  end
-end
-</code></pre>
-
-<p>That&rsquo;s it, now you will see rake exceptions at your NewRelic Errors view.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/08/08/rake-newrelic/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -477,27 +452,12 @@ Tags: rubymine,zeus,rubymine momiji,rubymine 6</p>
 
 <p>The first version of RubyMine with Zeus support was released last week. This is a small tip how to get it working.</p>
 
-<p>First make sure you are running at least <code>0.13.4.pre2</code> version of zeus. In your Gemfile:</p>
-
-<pre><code>gem 'zeus', '0.13.4.pre2'
-</code></pre>
-
-<p>and run</p>
-
-<pre><code>bundle install
-</code></pre>
-
-<p>Then go to <code>Run -&gt; Edit Configurations</code> menu. Select defaults for <code>RSpec</code> and <code>Test::Unit/Shoulda/Minitest</code> and tick <code>Use Zeus Server</code></p>
-
-<p><img src="http://markdown-blog.s3.amazonaws.com/2013-08/Screen_Shot_2013-08-05_at_4.27.36_PM.png" alt="Picture" /></p>
-
-<p>Now you can start Zeus server. Select <code>Tools -&gt; Run Zeus Server ...</code></p>
-
-<p>That&rsquo;s it. Now you can run any test and it will use Zeus server. Happy lightning tests!</p>
-
-<p>Note: if you rerun recent test, it might still use old configuration. To fix that, go to <code>Run -&gt; Edit Configurations...</code> and remove all existing test configs under <code>RSpec</code> and <code>Test::Unit/Shoulda/Minitest</code> dropdowns.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/08/05/zeus-with-ruby-mine/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -539,29 +499,12 @@ Tags: rails,activerecord,postgres,index,order by,slow query,sorted index</p>
 
 <p>Today was trying to figure out why my query was running very and very slow.</p>
 
-<pre><code>SELECT "events".* FROM "events" WHERE "events"."calendar_id" = 24 AND (start &gt;= '2012-01-01 00:00:00.000000') AND (start &lt; '2013-01-01 00:00:00.000000') ORDER BY size desc LIMIT 200
-</code></pre>
-
-<p>So to break it down, we are sorting by one column (size) and filtering by two columns (calendar_id and start). And I already had index</p>
-
-<pre><code>add_index :events, [:calendar_id, :start]
-</code></pre>
-
-<p> Even though there is already index for filtering columns, it is not used because we are also sorting.</p>
-
-<p>So I&rsquo;ve changed my index to</p>
-
-<pre><code>add_index :events, [:calendar_id, :start, :size]
-</code></pre>
-
-<p>But it didn&rsquo;t make any difference!! The problem order of the columns in the index very important, as in the query it is always orders first, so the final result made a huge difference in perfomance:</p>
-
-<pre><code>add_index :events, [:size, :calendar_id, :start]
-</code></pre>
-
-<p>Lesson learnt, order of the columns in index is very important.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/30/postgres/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -569,7 +512,7 @@ Tags: rails,activerecord,postgres,index,order by,slow query,sorted index</p>
   
   <div class="pagination">
     
-      <a class="prev" href="2">&larr; Older</a>
+      <a class="prev" href="/posts/2">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -664,6 +607,14 @@ Tags: rails,activerecord,postgres,index,order by,slow query,sorted index</p>
 }(document, 'script', 'facebook-jssdk'));</script>
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 
