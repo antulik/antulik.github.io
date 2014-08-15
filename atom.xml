@@ -4,7 +4,7 @@
   <title><![CDATA[Anton Katunin]]></title>
   <link href="http://antulik.github.io/atom.xml" rel="self"/>
   <link href="http://antulik.github.io/"/>
-  <updated>2014-08-15T22:55:37+04:00</updated>
+  <updated>2014-08-15T23:00:24+04:00</updated>
   <id>http://antulik.github.io/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
@@ -37,7 +37,7 @@
     <updated>2014-02-27T22:50:00+04:00</updated>
     <id>http://antulik.github.io/blog/2014/02/27/the-greatest-lesson-in-life-is-to-know-that-even-f</id>
     
-    <content type="html"><![CDATA[<p>The greatest lesson in life is to know that even fools are right sometimes.</p>
+    <content type="html"><![CDATA[<blockquote><p>The greatest lesson in life is to know that even fools are right sometimes.</p></blockquote>
 
 <p>&ndash; Churchill<br/>
 &ndash; via  <a href="http://theweek.com/article/index/256021/5-ways-to-build-a-good-relationship-with-anyone">the week</a></p>
