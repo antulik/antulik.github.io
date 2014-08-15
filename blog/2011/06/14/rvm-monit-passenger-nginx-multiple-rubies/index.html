@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>RVM + Monit + Passenger + nginx + multiple rubies - Anton Katunin</title>
+  <meta name="author" content="Anton Katunin">
+
+  
+  <meta name="description" content="I&rsquo;ve spent a lot of time setting up my host, would like to share my experience. So what we ve got:
+VPS box with ssh access
+Two websites, both &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://antulik.github.io/blog/2011/06/14/rvm-monit-passenger-nginx-multiple-rubies">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Anton Katunin" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner">
+	<div class="header-title"><a href="/">Anton Katunin</a></div>
+
+
+	<br><div class="header-subtitle">Things that inspired me.</div>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:antulik.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+  
+    
+      <h1 class="entry-title">RVM + Monit + Passenger + Nginx + Multiple Rubies</h1>
+    
+  
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-14T17:29:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I&rsquo;ve spent a lot of time setting up my host, would like to share my experience.</p>
+
+<p>So what we ve got:<br/>
+VPS box with ssh access<br/>
+Two websites, both ruby on rails:<br/>
+1. Custom website (ruby 1.9.2 + rails 3)<br/>
+2. Redmine (ruby 1.8.7 + rails 2)<br/>
+Passeger - to run websites<br/>
+Monit - to do monitoring and management of processes</p>
+
+<p>VPS was already preconfigured with Nginx and ruby 1.9.2 as system wide setup, so there are no problems of running the first website, as it will work straight out of the box.</p>
+
+<p>The question is how to setup both web applications with different ruby versions.</p>
+
+<p>As we are hosting applications on different ruby versions, we cannot host them together on the same passenger, so we need to setup proxy on the system wide nginx to run the second website as a standalone application.</p>
+
+<p>The access to the second site will look like that:<br/>
+1. Request comes in to the global nginx<br/>
+2. The request is proxied to standalone Passenger, which is running on the second instance of nginx</p>
+
+<p>First of all we need to install 1.8.7 ruby on our host. The best way to do that is to use RVM, and install it locally as a current user. I would personally don&rsquo;t recommend to install it system wide. The are many good tutorial how to do that, so i&rsquo;ll skip over that:<br/>
+<a href="http://beginrescueend.com/rvm/install/">http://beginrescueend.com/rvm/install/</a></p>
+
+<p>After RVM is install and running 1.8.7 ruby version, we need to decide how we will host our second application. For this example I run standalone passenger, which is simply an instance of nginx running passenger with single application. This setup is enough, if there is only one site, otherwise we need to setup a separate second instance of nginx for 1.8.7 ruby.</p>
+
+<p>Because it is only possible to have a single ruby version active at the same time, it could lead into extra problems if we don&rsquo;t do it properly. The best way i&rsquo;ve found to do that is to wrap 1.8.7 ruby passenger into separate aplication.<br/>
+1. You need to switch rvm to the required ruby version (1.8.7 in our case)<br/>
+2. Install passenger gem if its not already installed<br/>
+3. Use RVM wrapper to wrap passenger gem, something like:</p>
+
+<p>rvm wrapper 1.8.7@default redmine passenger</p>
+
+<p>That command will create an executable in<br/>
+where/rvm/installed/.rvm/ruby-1.8.7/bin/</p>
+
+<p>Now you can test it. Navigate to folder with 1.8.7 application and type</p>
+
+<p>redmine_passenger start</p>
+
+<p>This will start passenger server for 1.8.7, and doesn&rsquo;t matter what is the current RVM environment is setup, this will always use 1.8.7 ruby. You should be able to see you application running at localhost:3000 (by default)</p>
+
+<p>So the second passenger is up and running, we need to setup a proxy on the system wide nging to route requests to the second. This is a good information: <a href="http://blog.phusion.nl/2010/09/21/phusion-passenger-running-multiple-ruby-versions/">http://blog.phusion.nl/2010/09/21/phusion-passenger-running-multiple-ruby-versions/</a></p>
+
+<p>Pretty much we need to add new virtual host to the system wide nginx.</p>
+
+<pre><code>server { listen 80; server_name www.site.com; root /webapps/site.com/public; location / { proxy_pass http://127.0.0.1:3000; proxy_set_header Host $host; }}
+</code></pre>
+
+<p>After nginx is restarted, all requests should be routed to the second passenger.</p>
+
+<p>At this point, it is all good, you some people can leave it here. The problem with the current implementation, the system wide nginx instance will start automatically after system start, but the second passenger we need to start manually.</p>
+
+<p>Solution is to use Monit.<br/>
+<a href="http://mmonit.com/monit/documentation/monit.html  ">http://mmonit.com/monit/documentation/monit.html  </a>
+Monit is simply is a separate process, which monitors other processes and makes sure all of the up and running.</p>
+
+<p>This is my monit configuration file to start and monitor passenger for 1.8.7 as a separate process.</p>
+
+<h1>Monit config:</h1>
+
+<p>check process redmine_passenger<br/>
+ with pidfile /var/rapp/redmine/passenger.3000.pid<br/>
+ start program = &ldquo;/bin/su - user -c &lsquo;/var/rapp/.rvm/bin/redmine_passenger start /var/rapp/redmine/ -a 127.0.0.1 -p 3000 -d -e production&rsquo; &rdquo;<br/>
+ stop program = &ldquo;/bin/su - user -c &lsquo;/var/rapp/.rvm/bin/redmine_passenger stop /var/rapp/redmine/&rsquo; &rdquo;</p>
+
+<p>Replace user with current user. Also notice that there is a space before and after user.</p>
+
+<p>And finally, if you are stuck, here are some good website, which helped me to get my solution.</p>
+
+<p>References:<br/>
+<a href="http://groups.google.com/group/rubyversionmanager/browse_thread/thread/d1a6c1f6396a8bf6/51afece4c8943912?#51afece4c8943912">http://groups.google.com/group/rubyversionmanager/browse_thread/thread/d1a6c1f6396a8bf6/51afece4c8943912?#51afece4c8943912</a></p>
+
+<p><a href="http://groups.google.com/group/rubyversionmanager/browse_thread/thread/d1a6c1f6396a8bf6/279b6dacdf898d0a?#279b6dacdf898d0a">http://groups.google.com/group/rubyversionmanager/browse_thread/thread/d1a6c1f6396a8bf6/279b6dacdf898d0a?#279b6dacdf898d0a</a></p>
+
+<p><a href="https://gist.github.com/960540">https://gist.github.com/960540</a></p>
+
+<p><a href="http://matthew.mceachen.us/blog/howto-make-system-wide-rvm-installations-work-with-cron-monit-delayed_job-and-passenger-1021.html">http://matthew.mceachen.us/blog/howto-make-system-wide-rvm-installations-work-with-cron-monit-delayed_job-and-passenger-1021.html</a></p>
+
+<p><a href="http://stackoverflow.com/questions/5863815/monit-rvm-thin-on-osx-linux">http://stackoverflow.com/questions/5863815/monit-rvm-thin-on-osx-linux</a></p>
+
+<p><a href="https://github.com/romanbsd/passenger_monit">https://github.com/romanbsd/passenger_monit</a></p>
+
+<p><a href="http://rushthinking.com/using-monit/">http://rushthinking.com/using-monit/</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Anton Katunin</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-14T17:29:00+04:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://antulik.github.io/blog/2011/06/14/rvm-monit-passenger-nginx-multiple-rubies/" data-via="antulik" data-counturl="http://antulik.github.io/blog/2011/06/14/rvm-monit-passenger-nginx-multiple-rubies/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/06/14/gate-s-law/" title="Previous Post: Gate's law">&laquo; Gate's law</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/06/15/everybody-want-to-go-to-heaven-but-nobody-want-to-/" title="Next Post: Everybody want to go to heaven, but nobody want to die">Everybody want to go to heaven, but nobody want to die &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/03/01/the-most-valuable-skill-of-a-successful-entreprene/">The most valuable skill of a successful entrepreneur</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/27/the-greatest-lesson-in-life-is-to-know-that-even-f/">The greatest lesson in life is to know that even fools are right sometimes.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/27/following-your-passion-is-horrible-advice/">Following your Passion is Horrible Advice</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/27/the-red-queen-effect/">The Red Queen Effect</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/27/newport-s-law/">Newport's law</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/antulik">@antulik</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'antulik',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 -  Anton Katunin <br/>
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> + <a href="https://github.com/ioveracker/mnml">mnml</a>.
+	  
+  </span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

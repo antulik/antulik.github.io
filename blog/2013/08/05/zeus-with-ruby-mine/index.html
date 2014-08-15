@@ -1,0 +1,25 @@
+<p>Title: Zeus with RubyMine 6.0 Momiji
+Date: 2013-08-05
+Tags: rubymine,zeus,rubymine momiji,rubymine 6</p>
+
+<p>The first version of RubyMine with Zeus support was released last week. This is a small tip how to get it working.</p>
+
+<p>First make sure you are running at least <code>0.13.4.pre2</code> version of zeus. In your Gemfile:</p>
+
+<pre><code>gem 'zeus', '0.13.4.pre2'
+</code></pre>
+
+<p>and run</p>
+
+<pre><code>bundle install
+</code></pre>
+
+<p>Then go to <code>Run -&gt; Edit Configurations</code> menu. Select defaults for <code>RSpec</code> and <code>Test::Unit/Shoulda/Minitest</code> and tick <code>Use Zeus Server</code></p>
+
+<p><img src="http://markdown-blog.s3.amazonaws.com/2013-08/Screen_Shot_2013-08-05_at_4.27.36_PM.png" alt="Picture" /></p>
+
+<p>Now you can start Zeus server. Select <code>Tools -&gt; Run Zeus Server ...</code></p>
+
+<p>That&rsquo;s it. Now you can run any test and it will use Zeus server. Happy lightning tests!</p>
+
+<p>Note: if you rerun recent test, it might still use old configuration. To fix that, go to <code>Run -&gt; Edit Configurations...</code> and remove all existing test configs under <code>RSpec</code> and <code>Test::Unit/Shoulda/Minitest</code> dropdowns.</p>

@@ -1,0 +1,693 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Anton Katunin</title>
+  <meta name="author" content="Anton Katunin">
+
+  
+  <meta name="description" content="Title: gem install mysql2 - fails with MySQL 5.6.12
+Date: 2013-06-24
+Tags: mysql,gem,mysql2,mysql 5.6.12 If you installed the latest mysql with &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://antulik.github.io/posts/2">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Anton Katunin" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner">
+	<div class="header-title"><a href="/">Anton Katunin</a></div>
+
+
+	<br><div class="header-subtitle">Things that inspired me.</div>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:antulik.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/24/mysql2-install/">Mysql2 Install</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-24T00:00:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Title: gem install mysql2 - fails with MySQL 5.6.12
+Date: 2013-06-24
+Tags: mysql,gem,mysql2,mysql 5.6.12</p>
+
+<p>If you installed the latest mysql with homebrew, my version of mysql was 5.6.12. I couldn&rsquo;t install mysql2 gem</p>
+
+<pre><code>gem install mysql2
+</code></pre>
+
+<p>will output</p>
+
+<pre><code> /Users/anton/.rbenv/versions/1.9.3-p286/bin/ruby extconf.rb 
+checking for rb_thread_blocking_region()... yes
+checking for rb_wait_for_single_fd()... yes
+checking for mysql.h... no
+checking for mysql/mysql.h... no
+-----
+mysql.h is missing.  please check your installation of mysql and try again.
+-----
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of
+necessary libraries and/or headers.  Check the mkmf.log file for more
+details.  You may need configuration options.
+
+....
+</code></pre>
+
+<p>after checking forums, relinking include paths and failing at everything else, turns out it doesn&rsquo;t work for mysql version 5.6.12, so that answer on stackoverflow helped me.</p>
+
+<p><a href="http://stackoverflow.com/a/17252887/987533">http://stackoverflow.com/a/17252887/987533</a></p>
+
+<p>Copy of solution:</p>
+
+<p>Uninstall MySQL 5.6.12:</p>
+
+<pre><code>brew unlink mysql
+brew uninstall mysql
+</code></pre>
+
+<p>Go to the homebrew directory:</p>
+
+<pre><code>cd /usr/local
+</code></pre>
+
+<p>Go to version 5.6.10 (you can find a list of versions by running brew versions mysql:</p>
+
+<pre><code>git checkout 48f7e86 Library/Formula/mysql.rb
+</code></pre>
+
+<p>Then install mysql again:</p>
+
+<pre><code>brew install mysql
+</code></pre>
+
+<p>And install gem</p>
+
+<pre><code>gem install mysql2
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/29/principle-of-least-astonishment/">Principle of Least Astonishment</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-29T03:38:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The principle of least astonishment (POLA/PLA) applies to user interface design, software design, and ergonomics. It is alternatively referred to as the rule or law of least astonishment, or the rule or principle of least surprise (POLS).</p>
+
+<p>&ndash; <a href="http://en.wikipedia.org/wiki/Principle_of_least_astonishment">Wiki</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/28/i-don-t-know-who-discovered-water-but-it-wasn-t-a-/">I Don't Know Who Discovered Water, but It Wasn't a Fish.</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-28T05:22:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I don&rsquo;t know who discovered water, but it wasn&rsquo;t a fish.</p>
+
+<p> <a href="http://pocket.co/s9fBS">http://www.ecotopia.com/<wbr></wbr>webpress/futures.htm</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/27/no-more-yes-it-s-either-hell-yeah-or-no/">No More “yes”. It's Either “HELL YEAH!” or “no”.</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-27T05:17:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>No more “yes”. It&rsquo;s either “HELL YEAH!” or “no”.</p>
+
+<p> <a href="http://pocket.co/s9fnm">http://sivers.org/hellyeah</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/06/iterm/">Iterm</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-06T00:00:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Title: Quickly open files in iTerm with RubyMine on MacOS
+Date: 2013-03-06
+Tags: terminal,iterm,rubymine,open path,quick open</p>
+
+<p>You can use RubyMine for editing but still run tests in terminal. With this tip you can click path in terminal and open that file in RubyMine.</p>
+
+<p>Open iTerm preferences -> Profiles -> Advanced -> Semantic History</p>
+
+<p>Select <strong>Run command</strong> and paste</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>/Applications/RubyMine.app/Contents/MacOS/rubymine <span class="se">\5</span> --line <span class="se">\2</span> <span class="se">\1</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So now when you see some paths in your terminal use <strong>Cmd+Left click</strong> to open it in RubyMine.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rspec ./spec/models/profile_spec.rb:37
+</span><span class='line'>rspec ./spec/models/channel_spec.rb:13
+</span><span class='line'>rspec ./spec/models/stat_spec.rb:78
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Happy coding!</p>
+
+<p>References:</p>
+
+<ul>
+<li><a href="https://coderwall.com/p/b7e82q">Quickly open files in iTerm with Cmd+Click</a></li>
+<li><a href="http://www.jetbrains.com/ruby/webhelp/working-with-rubymine-features-from-command-line.html">Working with RubyMine Features from Command Line</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/25/don-t-think-what-s-the-cheapest-way-to-do-it/">Don't Think What's the Cheapest Way to Do It ...</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-25T03:35:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Don&rsquo;t think what&rsquo;s the cheapest way to do it or what&rsquo;s the fastest way to do it.</p>
+
+<p>Think &lsquo;what&rsquo;s the most amazing way to do it?&rsquo;</p>
+
+<p>By Richard Branson. Founder of Virgin Group</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/13/limerence-and-others/">Limerence and Others</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-13T02:13:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>Limerence</strong> is an involuntary state of mind which results from a romantic attraction to another person combined with an overwhelming, obsessive need to have one&rsquo;s feelings reciprocated.<br/>
+&ndash; <a href="http://en.wikipedia.org/wiki/Limerence">wiki</a></p>
+
+<p>In <a href="https://www.blogger.com/blogger.g?blogID=7242530014386557973" title="Biology">biology</a>, <strong>Bateman&rsquo;s principle</strong> is the theory that females almost always invest more <a href="https://www.blogger.com/blogger.g?blogID=7242530014386557973" title="Energy">energy</a> into producing <a href="https://www.blogger.com/blogger.g?blogID=7242530014386557973" title="Offspring">offspring</a> than males invest, and therefore in most species females are a <a href="https://www.blogger.com/blogger.g?blogID=7242530014386557973" title="Limiting factor">limiting resource</a> over which the other <a href="https://www.blogger.com/blogger.g?blogID=7242530014386557973" title="Sex">sex</a> will compete. It is named for English geneticist <a href="https://www.blogger.com/blogger.g?blogID=7242530014386557973" title="Angus John Bateman (page does not exist)">Angus John Bateman</a> (1919–1996). <br/>
+&ndash; <a href="http://en.wikipedia.org/wiki/Bateman%27s_principle">wiki</a></p>
+
+<p><strong>Homogamy</strong> is marriage between individuals who are, in some culturally important way, similar to each other. Homogamy may be based on socio-economic status, class, gender, ethnicity, or religion.<sup class="reference" id="cite_ref-1"><a href="http://en.wikipedia.org/wiki/Homogamy_%28sociology%29#cite_note-1"><span>[</span>1<span>]</span></a></sup> It is a form of <a href="http://en.wikipedia.org/wiki/Assortative_mating" title="Assortative mating">assortative mating</a>.</p>
+
+<p><strong>The Scarcity Principle</strong></p>
+
+<p>The <strong>Ben Franklin effect</strong> is a psychological finding: A person who has done someone a favor is more likely to do that person another favor than they would be if they had received a favor from that person. Similarly, one who harms another is more willing to harm them again than the victim is to retaliate.<br/>
+&ndash; <a href="http://en.wikipedia.org/wiki/Ben_Franklin_effect">wiki</a></p>
+
+<p>&ldquo;all the girls get prettier at closing time&rdquo; phenomenon<br/>
+&ndash; <a href="http://www.psychologytoday.com/blog/the-attraction-doctor/201204/does-playing-hard-get-make-you-fall-in-love">link</a></p>
+
+<p>The Science of the Friend Zone<br/>
+&ndash; <a href="http://www.youtube.com/watch?v=IGK2KprU-To">youtube</a><br/>
+<sup class="reference" id="cite_ref-1"></sup><br/>
+<sup class="reference" id="cite_ref-1"><a href="http://en.wikipedia.org/wiki/Ben_Franklin_effect#cite_note-1"><span></span><span></span></a></sup></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/28/the-bigger-the-lie-the-more-people-will-believe-it/">The Bigger the Lie, the More People Will Believe It</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-28T15:36:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you tell a lie big enough and keep repeating it, people will eventually come to believe it. The lie can be maintained only for such time as the State can shield the people from the political, economic and/or military consequences of the lie. It thus becomes vitally important for the State to use all of its powers to repress dissent, for the truth is the mortal enemy of the lie, and thus by extension, the truth is the greatest enemy of the State.</p>
+
+<p>&ndash; Joseph Goebbels  ( <a href="http://www.boxingscene.com/forums/showthread.php?t=344359">ref) (ref2</a>)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/23/and-then-i-m-glad-i-ve-found-true-friends/">And Then I'm Glad I've Found True Friends</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-23T16:56:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>&hellip; и потом я рад что нашел настоящих друзей</p>
+
+<p>&ndash; Battle Royall</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/22/always-listen-to-people-but-never-let-them-control/">Always Listen to People but Never Let Them Control You</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-22T05:46:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="3">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="1">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/03/01/the-most-valuable-skill-of-a-successful-entreprene/">The most valuable skill of a successful entrepreneur</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/27/the-greatest-lesson-in-life-is-to-know-that-even-f/">The greatest lesson in life is to know that even fools are right sometimes.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/27/following-your-passion-is-horrible-advice/">Following your Passion is Horrible Advice</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/27/the-red-queen-effect/">The Red Queen Effect</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/27/newport-s-law/">Newport's law</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/antulik">@antulik</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'antulik',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 -  Anton Katunin <br/>
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> + <a href="https://github.com/ioveracker/mnml">mnml</a>.
+	  
+  </span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

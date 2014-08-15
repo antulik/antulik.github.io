@@ -1,0 +1,35 @@
+<p>Title: Quickly open files in iTerm with RubyMine on MacOS
+Date: 2013-03-06
+Tags: terminal,iterm,rubymine,open path,quick open</p>
+
+<p>You can use RubyMine for editing but still run tests in terminal. With this tip you can click path in terminal and open that file in RubyMine.</p>
+
+<p>Open iTerm preferences -> Profiles -> Advanced -> Semantic History</p>
+
+<p>Select <strong>Run command</strong> and paste</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>/Applications/RubyMine.app/Contents/MacOS/rubymine <span class="se">\5</span> --line <span class="se">\2</span> <span class="se">\1</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>So now when you see some paths in your terminal use <strong>Cmd+Left click</strong> to open it in RubyMine.</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rspec ./spec/models/profile_spec.rb:37
+</span><span class='line'>rspec ./spec/models/channel_spec.rb:13
+</span><span class='line'>rspec ./spec/models/stat_spec.rb:78
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Happy coding!</p>
+
+<p>References:</p>
+
+<ul>
+<li><a href="https://coderwall.com/p/b7e82q">Quickly open files in iTerm with Cmd+Click</a></li>
+<li><a href="http://www.jetbrains.com/ruby/webhelp/working-with-rubymine-features-from-command-line.html">Working with RubyMine Features from Command Line</a></li>
+</ul>
+

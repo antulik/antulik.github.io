@@ -1,0 +1,58 @@
+<p>Title: gem install mysql2 - fails with MySQL 5.6.12
+Date: 2013-06-24
+Tags: mysql,gem,mysql2,mysql 5.6.12</p>
+
+<p>If you installed the latest mysql with homebrew, my version of mysql was 5.6.12. I couldn&rsquo;t install mysql2 gem</p>
+
+<pre><code>gem install mysql2
+</code></pre>
+
+<p>will output</p>
+
+<pre><code> /Users/anton/.rbenv/versions/1.9.3-p286/bin/ruby extconf.rb 
+checking for rb_thread_blocking_region()... yes
+checking for rb_wait_for_single_fd()... yes
+checking for mysql.h... no
+checking for mysql/mysql.h... no
+-----
+mysql.h is missing.  please check your installation of mysql and try again.
+-----
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of
+necessary libraries and/or headers.  Check the mkmf.log file for more
+details.  You may need configuration options.
+
+....
+</code></pre>
+
+<p>after checking forums, relinking include paths and failing at everything else, turns out it doesn&rsquo;t work for mysql version 5.6.12, so that answer on stackoverflow helped me.</p>
+
+<p><a href="http://stackoverflow.com/a/17252887/987533">http://stackoverflow.com/a/17252887/987533</a></p>
+
+<p>Copy of solution:</p>
+
+<p>Uninstall MySQL 5.6.12:</p>
+
+<pre><code>brew unlink mysql
+brew uninstall mysql
+</code></pre>
+
+<p>Go to the homebrew directory:</p>
+
+<pre><code>cd /usr/local
+</code></pre>
+
+<p>Go to version 5.6.10 (you can find a list of versions by running brew versions mysql:</p>
+
+<pre><code>git checkout 48f7e86 Library/Formula/mysql.rb
+</code></pre>
+
+<p>Then install mysql again:</p>
+
+<pre><code>brew install mysql
+</code></pre>
+
+<p>And install gem</p>
+
+<pre><code>gem install mysql2
+</code></pre>

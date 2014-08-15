@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ru | Anton Katunin]]></title>
+  <link href="http://antulik.github.io/blog/categories/ru/atom.xml" rel="self"/>
+  <link href="http://antulik.github.io/"/>
+  <updated>2014-08-15T22:02:52+04:00</updated>
+  <id>http://antulik.github.io/</id>
+  <author>
+    <name><![CDATA[Anton Katunin]]></name>
+    <email><![CDATA[antulik@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[WOW events]]></title>
+    <link href="http://antulik.github.io/blog/2009/03/29/wow-events/"/>
+    <updated>2009-03-29T08:07:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2009/03/29/wow-events</id>
+    <content type="html"><![CDATA[<p>После просмотра видео о ивентах в вове. Появились две идеи.</p>
+
+<p>Первая это скопировать увиденное на видео, когда если зомби убивает игрока то он становится тоже зомби, если наоборот то игрок становится зомби. Это напоминает похожие карты в КС. Zombie Infestation Event<br/>
+<a href="http://www.youtube.com/watch?v=xgjkm55pBeQ">http://www.youtube.com/watch?v=xgjkm55pBeQ</a></p>
+
+<p>Вторая похожая, есть один зомби, если в радиусе 50-100 ярдов находится игрок то у него переодически забираются деньги и добавляются зомби. Когда зомби умирает то на его место становится любой другой игрок в радиусе 30ярдов. В итоге чем дольше живет зомби тем больше денег он получает. Это напоминает ивент предложенный охотником &ldquo;Охота за головами&rdquo;. Это можно запустить в какой нибудь локации и чтобы зомби все время перемещался, а не стоял на одном месте, у него будет шлейф яда, состоящий из 20 облаков. Они будут обновляться каждые 5-10 сек. И если облака будут располагаться слишком близко то повысится уровень предупреждений.</p>
+
+<p>На определенных уровнях предупреждений охотники будут получать дополнительные преимущества, вплоть до точного местонахождения зомби.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wiki talents]]></title>
+    <link href="http://antulik.github.io/blog/2009/03/29/wiki-talents/"/>
+    <updated>2009-03-29T05:06:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2009/03/29/wiki-talents</id>
+    <content type="html"><![CDATA[<p>Вчера сделал калькулятор талантов с отображением работающего статуса на ривере. Идея летала давно, с момента запуска вики, но только сейчас собрался и сделал. На это меня подтолкнуло то что в университете как раз проходим javascript.</p>
+
+<p>Почти всю работу сделал за пол дня, только довести до ума потребовалось еще столько же времени. Посмотрим как теперь тестеры поддержат эту инициативу, хотя у них нет большого выбора :)</p>
+
+<p> <a href="http://www.world-rivera.ru/wiki/index.php/Talents">http://www.world-rivera.ru/wiki/index.php/Talents</a></p>
+
+<p>Идея реализована с помощью iframe, и не требует изменения самого калькулятора, а только накладывает эффект наверх.</p>
+]]></content>
+  </entry>
+  
+</feed>

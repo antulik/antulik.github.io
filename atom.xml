@@ -1,16 +1,519 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Anton Katunin]]></title>
   <link href="http://antulik.github.io/atom.xml" rel="self"/>
   <link href="http://antulik.github.io/"/>
-  <updated>2014-08-15T11:47:41+04:00</updated>
+  <updated>2014-08-15T22:02:52+04:00</updated>
   <id>http://antulik.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
-    
+    <name><![CDATA[Anton Katunin]]></name>
+    <email><![CDATA[antulik@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    
+    <title type="html"><![CDATA[The most valuable skill of a successful entrepreneur]]></title>
+    <link href="http://antulik.github.io/blog/2014/03/01/the-most-valuable-skill-of-a-successful-entreprene/"/>
+    
+    <updated>2014-03-01T11:56:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2014/03/01/the-most-valuable-skill-of-a-successful-entreprene</id>
+    
+    <content type="html"><![CDATA[<p>isn’t vision or passion or a steadfast insistence on destroying every barrier between yourself and some prize.</p>
+
+<p>Rather, it’s the ability to adopt an unconventional approach to learning: an improvisational flexibility not merely about which route to take towards some predetermined objective, but also a willingness to change the destination itself. This is a flexibility that might be squelched by rigid focus on any one goal.<br/>
+&ndash; <a href="http://www.farnamstreetblog.com/2014/02/oliver-burkeman-uncertainty/">farnam street</a></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[The greatest lesson in life is to know that even fools are right sometimes.]]></title>
+    <link href="http://antulik.github.io/blog/2014/02/27/the-greatest-lesson-in-life-is-to-know-that-even-f/"/>
+    
+    <updated>2014-02-27T22:50:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2014/02/27/the-greatest-lesson-in-life-is-to-know-that-even-f</id>
+    
+    <content type="html"><![CDATA[<p>The greatest lesson in life is to know that even fools are right sometimes.</p>
+
+<p>&ndash; Churchill<br/>
+&ndash; via  <a href="http://theweek.com/article/index/256021/5-ways-to-build-a-good-relationship-with-anyone">the week</a></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Following your Passion is Horrible Advice]]></title>
+    <link href="http://antulik.github.io/blog/2014/02/27/following-your-passion-is-horrible-advice/"/>
+    
+    <updated>2014-02-27T22:45:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2014/02/27/following-your-passion-is-horrible-advice</id>
+    
+    <content type="html"><![CDATA[<p>How do people end up loving what they do for a living?</p>
+
+<ol>
+<li>Don&rsquo;t follow your passion</li>
+<li>Be so good they can&rsquo;t ignore you</li>
+<li>Go deep</li>
+</ol>
+
+
+<p>&ndash; <a href="http://www.farnamstreetblog.com/2014/02/following-your-passion-cal-newport/">farnam street blog</a></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[The Red Queen Effect]]></title>
+    <link href="http://antulik.github.io/blog/2014/02/27/the-red-queen-effect/"/>
+    
+    <updated>2014-02-27T22:34:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2014/02/27/the-red-queen-effect</id>
+    
+    <content type="html"><![CDATA[<p>In the novel, Alice finds herself running faster and faster but staying in the same place.</p>
+
+<p>&ndash; <a href="http://www.farnamstreetblog.com/2012/10/the-red-queen-effect/">farnam street blog</a></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Newport's law]]></title>
+    <link href="http://antulik.github.io/blog/2014/02/27/newport-s-law/"/>
+    
+    <updated>2014-02-27T16:17:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2014/02/27/newport-s-law</id>
+    
+    <content type="html"><![CDATA[<p>Telling a young to follow their passion reduces the probability they will end up passionate.</p>
+
+<p>&ndash;  <a href="http://www.farnamstreetblog.com/2014/02/following-your-passion-cal-newport/">farnamstreet blog</a></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Деминг, Уильям Эдвардс]]></title>
+    <link href="http://antulik.github.io/blog/2014/02/14/deming-uil-yam-jedvards/"/>
+    
+    <updated>2014-02-14T12:20:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2014/02/14/deming-uil-yam-jedvards</id>
+    
+    <content type="html"><![CDATA[<p>&ldquo;Деминг учил, что путём принятия соответствующих принципов управления организации могут повысить качество и одновременно снизить расходы (за счёт сокращения количества отходов, переделывания, изнурения персонала и судебных разбирательств, при одновременном повышении лояльности клиентов). Ключ в том, чтобы практиковать непрерывное совершенствование и представлять производство как систему, а не как кусочки и части.&rdquo;</p>
+
+<p>&ndash; Деминг, Уильям Эдвардс<br/>
+&ndash; <a href="http://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BC%D0%B8%D0%BD%D0%B3,_%D0%A3%D0%B8%D0%BB%D1%8C%D1%8F%D0%BC_%D0%AD%D0%B4%D0%B2%D0%B0%D1%80%D0%B4%D1%81">wikipedia</a></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Pow]]></title>
+    <link href="http://antulik.github.io/blog/2013/09/01/pow/"/>
+    
+    <updated>2013-09-01T00:00:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/09/01/pow</id>
+    
+    <content type="html"><![CDATA[<p>I&rsquo;m using <a href="http://pow.cx/">POW</a> as a proxy to my local dev server in development. That gives me nice local *.dev domain names. However I&rsquo;ve noticed that it takes 10 seconds to load a singe page in Chrome. Of course, I thought, It does like 80 requests as each asset is served as a separate file in development. But after investigating it a bit more DNS lookup for each request was 3 seconds and for some reasons it was like that for every single http request.</p>
+
+<p>After looking around turns out that the issue DNS resolver checks my main DNS server first if it knows anything about *.dev domains, if not then it checks the next dns server and so on. Which results in 3 seconds delay.</p>
+
+<p>Solution.
+First thing. I had &lsquo;default&rsquo; rule in pow to proxy port 3000 if now specific domains was matched. So I&rsquo;ve added app specific domain I was using for the development -> storyline which gave me storyline.dev</p>
+
+<p>Second. I&rsquo;ve installed <a href="https://github.com/Rodreegez/powder">powder</a></p>
+
+<pre><code>gem install powder
+</code></pre>
+
+<p>and used host command to write my domains into the /etc/hosts file</p>
+
+<pre><code>powder host
+</code></pre>
+
+<p>after that DNS lookup decreased from 3s to 1ms. Pretty good time saver.</p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Rake Newrelic]]></title>
+    <link href="http://antulik.github.io/blog/2013/08/08/rake-newrelic/"/>
+    
+    <updated>2013-08-08T00:00:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/08/08/rake-newrelic</id>
+    
+    <content type="html"><![CDATA[<p>NewRelic service is great for application monitoring and errors tracking. However it doesn&rsquo;t track rake exceptions by default. You can use <a href="https://airbrake.io">AirBrake</a> gem and service, but sometimes it&rsquo;s too much for you. Fortunately with a bit of ruby it&rsquo;s easy to do it yourself.</p>
+
+<p>Create a small module to hook into rake library at <code>lib/rake_notifier.rb</code></p>
+
+<pre><code>module RakeNotifier
+  def self.included(klass)
+    klass.class_eval do
+      alias_method :display_error_message_without_log, :display_error_message
+      alias_method :display_error_message, :display_error_message_with_log
+    end
+  end
+
+  def display_error_message_with_log(ex)
+    ::NewRelic::Agent.notice_error(ex)
+    display_error_message_without_log(ex)
+  end
+end
+</code></pre>
+
+<p>And then hook it up in the rails initialiser <code>config/initializers/rake_notifier_hook.rb</code></p>
+
+<pre><code>if defined?(::Rake)
+  Rake.application.instance_eval do
+    class &lt;&lt; self
+      include RakeNotifier
+    end
+  end
+end
+</code></pre>
+
+<p>That&rsquo;s it, now you will see rake exceptions at your NewRelic Errors view.</p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Zeus With Ruby Mine]]></title>
+    <link href="http://antulik.github.io/blog/2013/08/05/zeus-with-ruby-mine/"/>
+    
+    <updated>2013-08-05T00:00:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/08/05/zeus-with-ruby-mine</id>
+    
+    <content type="html"><![CDATA[<p>Title: Zeus with RubyMine 6.0 Momiji
+Date: 2013-08-05
+Tags: rubymine,zeus,rubymine momiji,rubymine 6</p>
+
+<p>The first version of RubyMine with Zeus support was released last week. This is a small tip how to get it working.</p>
+
+<p>First make sure you are running at least <code>0.13.4.pre2</code> version of zeus. In your Gemfile:</p>
+
+<pre><code>gem 'zeus', '0.13.4.pre2'
+</code></pre>
+
+<p>and run</p>
+
+<pre><code>bundle install
+</code></pre>
+
+<p>Then go to <code>Run -&gt; Edit Configurations</code> menu. Select defaults for <code>RSpec</code> and <code>Test::Unit/Shoulda/Minitest</code> and tick <code>Use Zeus Server</code></p>
+
+<p><img src="http://markdown-blog.s3.amazonaws.com/2013-08/Screen_Shot_2013-08-05_at_4.27.36_PM.png" alt="Picture" /></p>
+
+<p>Now you can start Zeus server. Select <code>Tools -&gt; Run Zeus Server ...</code></p>
+
+<p>That&rsquo;s it. Now you can run any test and it will use Zeus server. Happy lightning tests!</p>
+
+<p>Note: if you rerun recent test, it might still use old configuration. To fix that, go to <code>Run -&gt; Edit Configurations...</code> and remove all existing test configs under <code>RSpec</code> and <code>Test::Unit/Shoulda/Minitest</code> dropdowns.</p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Postgres]]></title>
+    <link href="http://antulik.github.io/blog/2013/06/30/postgres/"/>
+    
+    <updated>2013-06-30T00:00:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/06/30/postgres</id>
+    
+    <content type="html"><![CDATA[<p>Title: Order of columns in table index matters (postgres)
+Date: 2013-06-30
+Tags: rails,activerecord,postgres,index,order by,slow query,sorted index</p>
+
+<p>Today was trying to figure out why my query was running very and very slow.</p>
+
+<pre><code>SELECT "events".* FROM "events" WHERE "events"."calendar_id" = 24 AND (start &gt;= '2012-01-01 00:00:00.000000') AND (start &lt; '2013-01-01 00:00:00.000000') ORDER BY size desc LIMIT 200
+</code></pre>
+
+<p>So to break it down, we are sorting by one column (size) and filtering by two columns (calendar_id and start). And I already had index</p>
+
+<pre><code>add_index :events, [:calendar_id, :start]
+</code></pre>
+
+<p> Even though there is already index for filtering columns, it is not used because we are also sorting.</p>
+
+<p>So I&rsquo;ve changed my index to</p>
+
+<pre><code>add_index :events, [:calendar_id, :start, :size]
+</code></pre>
+
+<p>But it didn&rsquo;t make any difference!! The problem order of the columns in the index very important, as in the query it is always orders first, so the final result made a huge difference in perfomance:</p>
+
+<pre><code>add_index :events, [:size, :calendar_id, :start]
+</code></pre>
+
+<p>Lesson learnt, order of the columns in index is very important.</p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Mysql2 Install]]></title>
+    <link href="http://antulik.github.io/blog/2013/06/24/mysql2-install/"/>
+    
+    <updated>2013-06-24T00:00:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/06/24/mysql2-install</id>
+    
+    <content type="html"><![CDATA[<p>Title: gem install mysql2 - fails with MySQL 5.6.12
+Date: 2013-06-24
+Tags: mysql,gem,mysql2,mysql 5.6.12</p>
+
+<p>If you installed the latest mysql with homebrew, my version of mysql was 5.6.12. I couldn&rsquo;t install mysql2 gem</p>
+
+<pre><code>gem install mysql2
+</code></pre>
+
+<p>will output</p>
+
+<pre><code> /Users/anton/.rbenv/versions/1.9.3-p286/bin/ruby extconf.rb 
+checking for rb_thread_blocking_region()... yes
+checking for rb_wait_for_single_fd()... yes
+checking for mysql.h... no
+checking for mysql/mysql.h... no
+-----
+mysql.h is missing.  please check your installation of mysql and try again.
+-----
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of
+necessary libraries and/or headers.  Check the mkmf.log file for more
+details.  You may need configuration options.
+
+....
+</code></pre>
+
+<p>after checking forums, relinking include paths and failing at everything else, turns out it doesn&rsquo;t work for mysql version 5.6.12, so that answer on stackoverflow helped me.</p>
+
+<p><a href="http://stackoverflow.com/a/17252887/987533">http://stackoverflow.com/a/17252887/987533</a></p>
+
+<p>Copy of solution:</p>
+
+<p>Uninstall MySQL 5.6.12:</p>
+
+<pre><code>brew unlink mysql
+brew uninstall mysql
+</code></pre>
+
+<p>Go to the homebrew directory:</p>
+
+<pre><code>cd /usr/local
+</code></pre>
+
+<p>Go to version 5.6.10 (you can find a list of versions by running brew versions mysql:</p>
+
+<pre><code>git checkout 48f7e86 Library/Formula/mysql.rb
+</code></pre>
+
+<p>Then install mysql again:</p>
+
+<pre><code>brew install mysql
+</code></pre>
+
+<p>And install gem</p>
+
+<pre><code>gem install mysql2
+</code></pre>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Principle of least astonishment]]></title>
+    <link href="http://antulik.github.io/blog/2013/04/29/principle-of-least-astonishment/"/>
+    
+    <updated>2013-04-29T03:38:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/04/29/principle-of-least-astonishment</id>
+    
+    <content type="html"><![CDATA[<p>The principle of least astonishment (POLA/PLA) applies to user interface design, software design, and ergonomics. It is alternatively referred to as the rule or law of least astonishment, or the rule or principle of least surprise (POLS).</p>
+
+<p>&ndash; <a href="http://en.wikipedia.org/wiki/Principle_of_least_astonishment">Wiki</a></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[I don't know who discovered water, but it wasn't a fish.]]></title>
+    <link href="http://antulik.github.io/blog/2013/03/28/i-don-t-know-who-discovered-water-but-it-wasn-t-a-/"/>
+    
+    <updated>2013-03-28T05:22:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/03/28/i-don-t-know-who-discovered-water-but-it-wasn-t-a-</id>
+    
+    <content type="html"><![CDATA[<p>I don&rsquo;t know who discovered water, but it wasn&rsquo;t a fish.</p>
+
+<p> <a href="http://pocket.co/s9fBS">http://www.ecotopia.com/<wbr></wbr>webpress/futures.htm</a></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[No more “yes”. It's either “HELL YEAH!” or “no”.]]></title>
+    <link href="http://antulik.github.io/blog/2013/03/27/no-more-yes-it-s-either-hell-yeah-or-no/"/>
+    
+    <updated>2013-03-27T05:17:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/03/27/no-more-yes-it-s-either-hell-yeah-or-no</id>
+    
+    <content type="html"><![CDATA[<p>No more “yes”. It&rsquo;s either “HELL YEAH!” or “no”.</p>
+
+<p> <a href="http://pocket.co/s9fnm">http://sivers.org/hellyeah</a></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Iterm]]></title>
+    <link href="http://antulik.github.io/blog/2013/03/06/iterm/"/>
+    
+    <updated>2013-03-06T00:00:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/03/06/iterm</id>
+    
+    <content type="html"><![CDATA[<p>Title: Quickly open files in iTerm with RubyMine on MacOS
+Date: 2013-03-06
+Tags: terminal,iterm,rubymine,open path,quick open</p>
+
+<p>You can use RubyMine for editing but still run tests in terminal. With this tip you can click path in terminal and open that file in RubyMine.</p>
+
+<p>Open iTerm preferences -> Profiles -> Advanced -> Semantic History</p>
+
+<p>Select <strong>Run command</strong> and paste</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>/Applications/RubyMine.app/Contents/MacOS/rubymine <span class="se">\5</span> --line <span class="se">\2</span> <span class="se">\1</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So now when you see some paths in your terminal use <strong>Cmd+Left click</strong> to open it in RubyMine.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rspec ./spec/models/profile_spec.rb:37
+</span><span class='line'>rspec ./spec/models/channel_spec.rb:13
+</span><span class='line'>rspec ./spec/models/stat_spec.rb:78
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Happy coding!</p>
+
+<p>References:</p>
+
+<ul>
+<li><a href="https://coderwall.com/p/b7e82q">Quickly open files in iTerm with Cmd+Click</a></li>
+<li><a href="http://www.jetbrains.com/ruby/webhelp/working-with-rubymine-features-from-command-line.html">Working with RubyMine Features from Command Line</a></li>
+</ul>
+
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Don't think what's the cheapest way to do it ...]]></title>
+    <link href="http://antulik.github.io/blog/2013/02/25/don-t-think-what-s-the-cheapest-way-to-do-it/"/>
+    
+    <updated>2013-02-25T03:35:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/02/25/don-t-think-what-s-the-cheapest-way-to-do-it</id>
+    
+    <content type="html"><![CDATA[<p>Don&rsquo;t think what&rsquo;s the cheapest way to do it or what&rsquo;s the fastest way to do it.</p>
+
+<p>Think &lsquo;what&rsquo;s the most amazing way to do it?&rsquo;</p>
+
+<p>By Richard Branson. Founder of Virgin Group</p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Limerence and others]]></title>
+    <link href="http://antulik.github.io/blog/2013/01/13/limerence-and-others/"/>
+    
+    <updated>2013-01-13T02:13:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/01/13/limerence-and-others</id>
+    
+    <content type="html"><![CDATA[<p><strong>Limerence</strong> is an involuntary state of mind which results from a romantic attraction to another person combined with an overwhelming, obsessive need to have one&rsquo;s feelings reciprocated.<br/>
+&ndash; <a href="http://en.wikipedia.org/wiki/Limerence">wiki</a></p>
+
+<p>In <a href="https://www.blogger.com/blogger.g?blogID=7242530014386557973" title="Biology">biology</a>, <strong>Bateman&rsquo;s principle</strong> is the theory that females almost always invest more <a href="https://www.blogger.com/blogger.g?blogID=7242530014386557973" title="Energy">energy</a> into producing <a href="https://www.blogger.com/blogger.g?blogID=7242530014386557973" title="Offspring">offspring</a> than males invest, and therefore in most species females are a <a href="https://www.blogger.com/blogger.g?blogID=7242530014386557973" title="Limiting factor">limiting resource</a> over which the other <a href="https://www.blogger.com/blogger.g?blogID=7242530014386557973" title="Sex">sex</a> will compete. It is named for English geneticist <a href="https://www.blogger.com/blogger.g?blogID=7242530014386557973" title="Angus John Bateman (page does not exist)">Angus John Bateman</a> (1919–1996). <br/>
+&ndash; <a href="http://en.wikipedia.org/wiki/Bateman%27s_principle">wiki</a></p>
+
+<p><strong>Homogamy</strong> is marriage between individuals who are, in some culturally important way, similar to each other. Homogamy may be based on socio-economic status, class, gender, ethnicity, or religion.<sup class="reference" id="cite_ref-1"><a href="http://en.wikipedia.org/wiki/Homogamy_%28sociology%29#cite_note-1"><span>[</span>1<span>]</span></a></sup> It is a form of <a href="http://en.wikipedia.org/wiki/Assortative_mating" title="Assortative mating">assortative mating</a>.</p>
+
+<p><strong>The Scarcity Principle</strong></p>
+
+<p>The <strong>Ben Franklin effect</strong> is a psychological finding: A person who has done someone a favor is more likely to do that person another favor than they would be if they had received a favor from that person. Similarly, one who harms another is more willing to harm them again than the victim is to retaliate.<br/>
+&ndash; <a href="http://en.wikipedia.org/wiki/Ben_Franklin_effect">wiki</a></p>
+
+<p>&ldquo;all the girls get prettier at closing time&rdquo; phenomenon<br/>
+&ndash; <a href="http://www.psychologytoday.com/blog/the-attraction-doctor/201204/does-playing-hard-get-make-you-fall-in-love">link</a></p>
+
+<p>The Science of the Friend Zone<br/>
+&ndash; <a href="http://www.youtube.com/watch?v=IGK2KprU-To">youtube</a><br/>
+<sup class="reference" id="cite_ref-1"></sup><br/>
+<sup class="reference" id="cite_ref-1"><a href="http://en.wikipedia.org/wiki/Ben_Franklin_effect#cite_note-1"><span></span><span></span></a></sup></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[The bigger the lie, the more people will believe it]]></title>
+    <link href="http://antulik.github.io/blog/2012/12/28/the-bigger-the-lie-the-more-people-will-believe-it/"/>
+    
+    <updated>2012-12-28T15:36:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2012/12/28/the-bigger-the-lie-the-more-people-will-believe-it</id>
+    
+    <content type="html"><![CDATA[<p>If you tell a lie big enough and keep repeating it, people will eventually come to believe it. The lie can be maintained only for such time as the State can shield the people from the political, economic and/or military consequences of the lie. It thus becomes vitally important for the State to use all of its powers to repress dissent, for the truth is the mortal enemy of the lie, and thus by extension, the truth is the greatest enemy of the State.</p>
+
+<p>&ndash; Joseph Goebbels  ( <a href="http://www.boxingscene.com/forums/showthread.php?t=344359">ref) (ref2</a>)</p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[and then I'm glad I've found true friends]]></title>
+    <link href="http://antulik.github.io/blog/2012/12/23/and-then-i-m-glad-i-ve-found-true-friends/"/>
+    
+    <updated>2012-12-23T16:56:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2012/12/23/and-then-i-m-glad-i-ve-found-true-friends</id>
+    
+    <content type="html"><![CDATA[<p>&hellip; и потом я рад что нашел настоящих друзей</p>
+
+<p>&ndash; Battle Royall</p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Always listen to people but never let them control you]]></title>
+    <link href="http://antulik.github.io/blog/2012/11/22/always-listen-to-people-but-never-let-them-control/"/>
+    
+    <updated>2012-11-22T05:46:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2012/11/22/always-listen-to-people-but-never-let-them-control</id>
+    
+    <content type="html"><![CDATA[
+]]></content>
+    
+  </entry>
   
 </feed>

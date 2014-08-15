@@ -1,0 +1,27 @@
+<p>Title: Order of columns in table index matters (postgres)
+Date: 2013-06-30
+Tags: rails,activerecord,postgres,index,order by,slow query,sorted index</p>
+
+<p>Today was trying to figure out why my query was running very and very slow.</p>
+
+<pre><code>SELECT "events".* FROM "events" WHERE "events"."calendar_id" = 24 AND (start &gt;= '2012-01-01 00:00:00.000000') AND (start &lt; '2013-01-01 00:00:00.000000') ORDER BY size desc LIMIT 200
+</code></pre>
+
+<p>So to break it down, we are sorting by one column (size) and filtering by two columns (calendar_id and start). And I already had index</p>
+
+<pre><code>add_index :events, [:calendar_id, :start]
+</code></pre>
+
+<p> Even though there is already index for filtering columns, it is not used because we are also sorting.</p>
+
+<p>So I&rsquo;ve changed my index to</p>
+
+<pre><code>add_index :events, [:calendar_id, :start, :size]
+</code></pre>
+
+<p>But it didn&rsquo;t make any difference!! The problem order of the columns in the index very important, as in the query it is always orders first, so the final result made a huge difference in perfomance:</p>
+
+<pre><code>add_index :events, [:size, :calendar_id, :start]
+</code></pre>
+
+<p>Lesson learnt, order of the columns in index is very important.</p>
