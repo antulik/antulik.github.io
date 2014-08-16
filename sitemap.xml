@@ -57,6 +57,12 @@
   </url>
   
   <url>
+    <loc>http://antulik.github.io/blog/2013/07/19/my-last-three-projects-wins-and-failures/</loc>
+    <lastmod>2013-07-19T00:00:00+04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://antulik.github.io/blog/2013/06/30/postgres/</loc>
     <lastmod>2013-06-30T00:00:00+04:00</lastmod>
     <priority>0.8</priority>
@@ -89,6 +95,18 @@
   <url>
     <loc>http://antulik.github.io/blog/2013/03/06/iterm/</loc>
     <lastmod>2013-03-06T00:00:00+04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://antulik.github.io/blog/2013/03/02/d3js-workshop/</loc>
+    <lastmod>2013-03-02T00:00:00+04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://antulik.github.io/blog/2013/03/02/d3js-mindblow/</loc>
+    <lastmod>2013-03-02T00:00:00+04:00</lastmod>
     <priority>0.8</priority>
   </url>
   
@@ -1049,21 +1067,21 @@
   
   <url>
     <loc>http://antulik.github.io/blog/archives/</loc>
-    <lastmod>2014-08-16T14:42:20+04:00</lastmod>
+    <lastmod>2014-08-16T16:58:02+04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://antulik.github.io/</loc>
-    <lastmod>2014-08-16T14:42:20+04:00</lastmod>
+    <lastmod>2014-08-16T16:58:02+04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://antulik.github.io/about/</loc>
-    <lastmod>2014-08-16T14:42:20+04:00</lastmod>
+    <lastmod>2014-08-16T16:58:02+04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

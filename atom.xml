@@ -4,7 +4,7 @@
   <title><![CDATA[Anton Katunin]]></title>
   <link href="http://antulik.github.io/atom.xml" rel="self"/>
   <link href="http://antulik.github.io/"/>
-  <updated>2014-08-16T14:42:20+04:00</updated>
+  <updated>2014-08-16T16:58:02+04:00</updated>
   <id>http://antulik.github.io/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
@@ -230,6 +230,22 @@ end
   
   <entry>
     
+    <title type="html"><![CDATA[My last three projects - wins and failures]]></title>
+    <link href="http://antulik.github.io/blog/2013/07/19/my-last-three-projects-wins-and-failures/"/>
+    
+    <updated>2013-07-19T00:00:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/07/19/my-last-three-projects-wins-and-failures</id>
+    
+    <content type="html"><![CDATA[<iframe src="http://www.slideshare.net/slideshow/embed_code/24406610 " width="595" height="446" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe>
+
+
+<p></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
     <title type="html"><![CDATA[Order of columns in table index matters (postgres)]]></title>
     <link href="http://antulik.github.io/blog/2013/06/30/postgres/"/>
     
@@ -428,6 +444,38 @@ brew uninstall mysql
   
   <entry>
     
+    <title type="html"><![CDATA[D3.js workshop]]></title>
+    <link href="http://antulik.github.io/blog/2013/03/02/d3js-workshop/"/>
+    
+    <updated>2013-03-02T00:00:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/03/02/d3js-workshop</id>
+    
+    <content type="html"><![CDATA[<iframe src="http://www.slideshare.net/slideshow/embed_code/16871946 " width="595" height="446" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe>
+
+
+<p></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[D3.js mindblow]]></title>
+    <link href="http://antulik.github.io/blog/2013/03/02/d3js-mindblow/"/>
+    
+    <updated>2013-03-02T00:00:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/03/02/d3js-mindblow</id>
+    
+    <content type="html"><![CDATA[<iframe src="http://www.slideshare.net/slideshow/embed_code/16871890 " width="595" height="446" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe>
+
+
+<p></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
     <title type="html"><![CDATA[Don't think what's the cheapest way to do it ...]]></title>
     <link href="http://antulik.github.io/blog/2013/02/25/don-t-think-what-s-the-cheapest-way-to-do-it/"/>
     
@@ -471,53 +519,6 @@ brew uninstall mysql
 &ndash; <a href="http://www.youtube.com/watch?v=IGK2KprU-To">youtube</a><br/>
 <sup class="reference" id="cite_ref-1"></sup><br/>
 <sup class="reference" id="cite_ref-1"><a href="http://en.wikipedia.org/wiki/Ben_Franklin_effect#cite_note-1"><span></span><span></span></a></sup></p>
-]]></content>
-    
-  </entry>
-  
-  <entry>
-    
-    <title type="html"><![CDATA[The bigger the lie, the more people will believe it]]></title>
-    <link href="http://antulik.github.io/blog/2012/12/28/the-bigger-the-lie-the-more-people-will-believe-it/"/>
-    
-    <updated>2012-12-28T15:36:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2012/12/28/the-bigger-the-lie-the-more-people-will-believe-it</id>
-    
-    <content type="html"><![CDATA[<p>If you tell a lie big enough and keep repeating it, people will eventually come to believe it. The lie can be maintained only for such time as the State can shield the people from the political, economic and/or military consequences of the lie. It thus becomes vitally important for the State to use all of its powers to repress dissent, for the truth is the mortal enemy of the lie, and thus by extension, the truth is the greatest enemy of the State.</p>
-
-<p>&ndash; Joseph Goebbels  ( <a href="http://www.boxingscene.com/forums/showthread.php?t=344359">ref) (ref2</a>)</p>
-]]></content>
-    
-  </entry>
-  
-  <entry>
-    
-    <title type="html"><![CDATA[and then I'm glad I've found true friends]]></title>
-    <link href="http://antulik.github.io/blog/2012/12/23/and-then-i-m-glad-i-ve-found-true-friends/"/>
-    
-    <updated>2012-12-23T16:56:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2012/12/23/and-then-i-m-glad-i-ve-found-true-friends</id>
-    
-    <content type="html"><![CDATA[<blockquote><p>and then I&rsquo;m glad I&rsquo;ve found true friends</p></blockquote>
-
-<p>&ndash; Battle Royall</p>
-
-<blockquote><p>&hellip; и потом я рад что нашел настоящих друзей</p></blockquote>
-
-<p>&ndash; Королевская битва</p>
-]]></content>
-    
-  </entry>
-  
-  <entry>
-    
-    <title type="html"><![CDATA[Always listen to people but never let them control you]]></title>
-    <link href="http://antulik.github.io/blog/2012/11/22/always-listen-to-people-but-never-let-them-control/"/>
-    
-    <updated>2012-11-22T05:46:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2012/11/22/always-listen-to-people-but-never-let-them-control</id>
-    
-    <content type="html"><![CDATA[
 ]]></content>
     
   </entry>
