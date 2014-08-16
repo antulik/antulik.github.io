@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: mysql 5.6.12 | Anton Katunin]]></title>
+  <link href="http://antulik.github.io/blog/categories/mysql-5-dot-6-12/atom.xml" rel="self"/>
+  <link href="http://antulik.github.io/"/>
+  <updated>2014-08-16T14:42:20+04:00</updated>
+  <id>http://antulik.github.io/</id>
+  <author>
+    <name><![CDATA[Anton Katunin]]></name>
+    <email><![CDATA[antulik@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[gem install mysql2 - fails with MySQL 5.6.12]]></title>
+    <link href="http://antulik.github.io/blog/2013/06/24/mysql2-install/"/>
+    <updated>2013-06-24T00:00:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/06/24/mysql2-install</id>
+    <content type="html"><![CDATA[<p>If you installed the latest mysql with homebrew, my version of mysql was 5.6.12. I couldn&rsquo;t install mysql2 gem</p>
+
+<pre><code>gem install mysql2
+</code></pre>
+
+<!--more-->
+
+
+<p>will output</p>
+
+<pre><code> /Users/anton/.rbenv/versions/1.9.3-p286/bin/ruby extconf.rb 
+checking for rb_thread_blocking_region()... yes
+checking for rb_wait_for_single_fd()... yes
+checking for mysql.h... no
+checking for mysql/mysql.h... no
+-----
+mysql.h is missing.  please check your installation of mysql and try again.
+-----
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of
+necessary libraries and/or headers.  Check the mkmf.log file for more
+details.  You may need configuration options.
+
+....
+</code></pre>
+
+<p>after checking forums, relinking include paths and failing at everything else, turns out it doesn&rsquo;t work for mysql version 5.6.12, so that answer on stackoverflow helped me.</p>
+
+<p><a href="http://stackoverflow.com/a/17252887/987533">http://stackoverflow.com/a/17252887/987533</a></p>
+
+<p>Copy of solution:</p>
+
+<p>Uninstall MySQL 5.6.12:</p>
+
+<pre><code>brew unlink mysql
+brew uninstall mysql
+</code></pre>
+
+<p>Go to the homebrew directory:</p>
+
+<pre><code>cd /usr/local
+</code></pre>
+
+<p>Go to version 5.6.10 (you can find a list of versions by running brew versions mysql:</p>
+
+<pre><code>git checkout 48f7e86 Library/Formula/mysql.rb
+</code></pre>
+
+<p>Then install mysql again:</p>
+
+<pre><code>brew install mysql
+</code></pre>
+
+<p>And install gem</p>
+
+<pre><code>gem install mysql2
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

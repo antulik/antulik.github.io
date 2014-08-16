@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: powder | Anton Katunin]]></title>
+  <link href="http://antulik.github.io/blog/categories/powder/atom.xml" rel="self"/>
+  <link href="http://antulik.github.io/"/>
+  <updated>2014-08-16T14:42:20+04:00</updated>
+  <id>http://antulik.github.io/</id>
+  <author>
+    <name><![CDATA[Anton Katunin]]></name>
+    <email><![CDATA[antulik@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Speed up POW DNS Lookup]]></title>
+    <link href="http://antulik.github.io/blog/2013/09/01/pow/"/>
+    <updated>2013-09-01T00:00:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/09/01/pow</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m using <a href="http://pow.cx/">POW</a> as a proxy to my local dev server in development. That gives me nice local *.dev domain names. However I&rsquo;ve noticed that it takes 10 seconds to load a singe page in Chrome. Of course, I thought, It does like 80 requests as each asset is served as a separate file in development. But after investigating it a bit more DNS lookup for each request was 3 seconds and for some reasons it was like that for every single http request.</p>
+
+<!--more-->
+
+
+<p>After looking around turns out that the issue DNS resolver checks my main DNS server first if it knows anything about *.dev domains, if not then it checks the next dns server and so on. Which results in 3 seconds delay.</p>
+
+<p>Solution.
+First thing. I had &lsquo;default&rsquo; rule in pow to proxy port 3000 if now specific domains was matched. So I&rsquo;ve added app specific domain I was using for the development -> storyline which gave me storyline.dev</p>
+
+<p>Second. I&rsquo;ve installed <a href="https://github.com/Rodreegez/powder">powder</a></p>
+
+<pre><code>gem install powder
+</code></pre>
+
+<p>and used host command to write my domains into the /etc/hosts file</p>
+
+<pre><code>powder host
+</code></pre>
+
+<p>after that DNS lookup decreased from 3s to 1ms. Pretty good time saver.</p>
+]]></content>
+  </entry>
+  
+</feed>

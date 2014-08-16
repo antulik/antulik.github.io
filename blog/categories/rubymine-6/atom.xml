@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rubymine 6 | Anton Katunin]]></title>
+  <link href="http://antulik.github.io/blog/categories/rubymine-6/atom.xml" rel="self"/>
+  <link href="http://antulik.github.io/"/>
+  <updated>2014-08-16T14:42:20+04:00</updated>
+  <id>http://antulik.github.io/</id>
+  <author>
+    <name><![CDATA[Anton Katunin]]></name>
+    <email><![CDATA[antulik@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Zeus with RubyMine 6.0 Momiji]]></title>
+    <link href="http://antulik.github.io/blog/2013/08/05/zeus-with-ruby-mine/"/>
+    <updated>2013-08-05T00:00:00+04:00</updated>
+    <id>http://antulik.github.io/blog/2013/08/05/zeus-with-ruby-mine</id>
+    <content type="html"><![CDATA[<p>The first version of RubyMine with Zeus support was released last week. This is a small tip how to get it working.</p>
+
+<!--more-->
+
+
+<p>First make sure you are running at least <code>0.13.4.pre2</code> version of zeus. In your Gemfile:</p>
+
+<pre><code>gem 'zeus', '0.13.4.pre2'
+</code></pre>
+
+<p>and run</p>
+
+<pre><code>bundle install
+</code></pre>
+
+<p>Then go to <code>Run -&gt; Edit Configurations</code> menu. Select defaults for <code>RSpec</code> and <code>Test::Unit/Shoulda/Minitest</code> and tick <code>Use Zeus Server</code></p>
+
+<p><img src="http://markdown-blog.s3.amazonaws.com/2013-08/Screen_Shot_2013-08-05_at_4.27.36_PM.png" alt="Picture" /></p>
+
+<p>Now you can start Zeus server. Select <code>Tools -&gt; Run Zeus Server ...</code></p>
+
+<p>That&rsquo;s it. Now you can run any test and it will use Zeus server. Happy lightning tests!</p>
+
+<p>Note: if you rerun recent test, it might still use old configuration. To fix that, go to <code>Run -&gt; Edit Configurations...</code> and remove all existing test configs under <code>RSpec</code> and <code>Test::Unit/Shoulda/Minitest</code> dropdowns.</p>
+]]></content>
+  </entry>
+  
+</feed>
