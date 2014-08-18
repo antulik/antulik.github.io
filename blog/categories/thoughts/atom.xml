@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: thoughts | Anton Katunin]]></title>
-  <link href="http://antulik.github.io/blog/categories/thoughts/atom.xml" rel="self"/>
-  <link href="http://antulik.github.io/"/>
-  <updated>2014-08-18T21:04:35+04:00</updated>
-  <id>http://antulik.github.io/</id>
+  <link href="http://antulik.com/blog/categories/thoughts/atom.xml" rel="self"/>
+  <link href="http://antulik.com/"/>
+  <updated>2014-08-18T21:52:56+04:00</updated>
+  <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
     <email><![CDATA[antulik@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[OpenSource Store]]></title>
-    <link href="http://antulik.github.io/blog/2010/05/11/opensource-store/"/>
+    <link href="http://antulik.com/blog/2010/05/11/opensource-store/"/>
     <updated>2010-05-11T12:33:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2010/05/11/opensource-store</id>
+    <id>http://antulik.com/blog/2010/05/11/opensource-store</id>
     <content type="html"><![CDATA[<p>Apple store дает довольно удобный доступ к большому кол-ву приложений которые стоят в среднем пару долларов, хотя есть довольно дорогие. Эта идея удобна как пользователям, т.к. они получают быстрый доступ к программам по приемлемым ценам и разработчикам, т.к. это упрощает распространение их разработок, и никак не сказывается на доходе, т.к. как правило доход набирается от кол-ва пользователей а не от высокой цены продукта.</p>
 
 <p>Идея чтобы перенести этот принцип на обычные компьютерные програмы. Объединить их в одну систему, и предоставлять некоторые сервисы, допустим автоматическое обновление, список изменений, скриншоты и т.д. В общем все по аналогии Apple store.</p>
@@ -26,9 +26,9 @@
   
   <entry>
     <title type="html"><![CDATA[A2Square]]></title>
-    <link href="http://antulik.github.io/blog/2010/05/03/a2square/"/>
+    <link href="http://antulik.com/blog/2010/05/03/a2square/"/>
     <updated>2010-05-03T05:23:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2010/05/03/a2square</id>
+    <id>http://antulik.com/blog/2010/05/03/a2square</id>
     <content type="html"><![CDATA[<p>Я уже чтото писал похожее, идея создать платформу для разных програм/плагинов, так что пользователям нужно будет только скать основу, а остальную функциональность можно будет добавить по ходу.</p>
 
 <p>Задача объединить маленькие и простые програмки под одной крышей, и предоставить набор взаимный набор функций между модулями. &ldquo;А в квадрате&rdquo; должен объединять программы написанные на разных языках и сфокусироваться только на функциональности.</p>
@@ -37,9 +37,9 @@
   
   <entry>
     <title type="html"><![CDATA[Personal notes to files]]></title>
-    <link href="http://antulik.github.io/blog/2010/04/16/personal-notes-to-files/"/>
+    <link href="http://antulik.com/blog/2010/04/16/personal-notes-to-files/"/>
     <updated>2010-04-16T14:19:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2010/04/16/personal-notes-to-files</id>
+    <id>http://antulik.com/blog/2010/04/16/personal-notes-to-files</id>
     <content type="html"><![CDATA[<p>Есть постоянная нужда добавлять какую нибудь информацию к файлам. Это может быть информация насколько тебе понравилось видео, или смотрел ли ты его вообще или нет. Может это будет простое описание кто на фотографии, или ключевое описание файла.</p>
 
 <p>Нужен универсальный способ добавления информации.</p>
@@ -50,9 +50,9 @@
   
   <entry>
     <title type="html"><![CDATA[Online communities]]></title>
-    <link href="http://antulik.github.io/blog/2010/04/09/online-communities/"/>
+    <link href="http://antulik.com/blog/2010/04/09/online-communities/"/>
     <updated>2010-04-09T09:35:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2010/04/09/online-communities</id>
+    <id>http://antulik.com/blog/2010/04/09/online-communities</id>
     <content type="html"><![CDATA[<p>Идея появилась после прочтения как работает система рекомендаций ведео на YouTube. Если вкратце, то у них есть база твоих друзей и видео выбирается на основе твоих предпочтений и твоих друзей.</p>
 
 <p>Идея чтобы это развить еще больше. В интернете все люди деляться на разные категории по интересам и умственному развитию. И следовательно их интересно получать информацию из своей группы. И идея в том чтобы объединять пользователей в такие группы, как результат им будет интересно в них.</p>
@@ -61,9 +61,9 @@
   
   <entry>
     <title type="html"><![CDATA[Developer story]]></title>
-    <link href="http://antulik.github.io/blog/2010/04/01/developer-story/"/>
+    <link href="http://antulik.com/blog/2010/04/01/developer-story/"/>
     <updated>2010-04-01T17:04:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2010/04/01/developer-story</id>
+    <id>http://antulik.com/blog/2010/04/01/developer-story</id>
     <content type="html"><![CDATA[<p>Сейчас все больше и больше равных электронных проектов в интернете. И разработчики в них постоянно меняются, впрочем как и проекты у самих разработчиков. И все усложняется тем что личности в интернете все выдуманые, (nickname) и различаются от сайта до сайта. Цель это все объединить под один список. Как бы так перенос доверия из одного проекта в другой.</p>
 
 <p>Например, была группа очень хороших разработчиков на одном проекте. Затем он закрылся и все разбежались кто куда. И когда пришел один из них на другой проект, то многие его не знают, и он начинает получать доверие сначала, даже если его знания превосходят всех остальных. При наличие такого сайта, можно сразу сохранить вашу &ldquo;виртуальную личность&rdquo;. Это особо актуально с развинием открытых проектов (open source), когда разработчики часто меняются, и важно как можно раньше знать уровень знаний новичков, и стоит ли к ним прислушиваться или нет.</p>

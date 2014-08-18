@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: mysql 5.6.12 | Anton Katunin]]></title>
-  <link href="http://antulik.github.io/blog/categories/mysql-5-dot-6-12/atom.xml" rel="self"/>
-  <link href="http://antulik.github.io/"/>
-  <updated>2014-08-18T21:04:35+04:00</updated>
-  <id>http://antulik.github.io/</id>
+  <link href="http://antulik.com/blog/categories/mysql-5-dot-6-12/atom.xml" rel="self"/>
+  <link href="http://antulik.com/"/>
+  <updated>2014-08-18T21:52:56+04:00</updated>
+  <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
     <email><![CDATA[antulik@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[gem install mysql2 - fails with MySQL 5.6.12]]></title>
-    <link href="http://antulik.github.io/blog/2013/06/24/mysql2-install/"/>
+    <link href="http://antulik.com/blog/2013/06/24/mysql2-install/"/>
     <updated>2013-06-24T00:00:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2013/06/24/mysql2-install</id>
+    <id>http://antulik.com/blog/2013/06/24/mysql2-install</id>
     <content type="html"><![CDATA[<p>If you installed the latest mysql with homebrew, my version of mysql was 5.6.12. I couldn&rsquo;t install mysql2 gem</p>
 
 <pre><code>gem install mysql2
