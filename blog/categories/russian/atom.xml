@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: russian | Anton Katunin]]></title>
-  <link href="http://antulik.com/blog/categories/russian/atom.xml" rel="self"/>
-  <link href="http://antulik.com/"/>
-  <updated>2014-08-18T21:52:56+04:00</updated>
-  <id>http://antulik.com/</id>
+  <link href="http://antulik.github.io/blog/categories/russian/atom.xml" rel="self"/>
+  <link href="http://antulik.github.io/"/>
+  <updated>2014-08-18T21:54:35+04:00</updated>
+  <id>http://antulik.github.io/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
     <email><![CDATA[antulik@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Деминг, Уильям Эдвардс]]></title>
-    <link href="http://antulik.com/blog/2014/02/14/deming-uil-yam-jedvards/"/>
+    <link href="http://antulik.github.io/blog/2014/02/14/deming-uil-yam-jedvards/"/>
     <updated>2014-02-14T12:20:00+04:00</updated>
-    <id>http://antulik.com/blog/2014/02/14/deming-uil-yam-jedvards</id>
+    <id>http://antulik.github.io/blog/2014/02/14/deming-uil-yam-jedvards</id>
     <content type="html"><![CDATA[<p>&ldquo;Деминг учил, что путём принятия соответствующих принципов управления организации могут повысить качество и одновременно снизить расходы (за счёт сокращения количества отходов, переделывания, изнурения персонала и судебных разбирательств, при одновременном повышении лояльности клиентов). Ключ в том, чтобы практиковать непрерывное совершенствование и представлять производство как систему, а не как кусочки и части.&rdquo;</p>
 
 <p>&ndash; Деминг, Уильям Эдвардс<br/>
@@ -27,36 +27,36 @@
   
   <entry>
     <title type="html"><![CDATA[John Rawls]]></title>
-    <link href="http://antulik.com/blog/2012/11/22/john-rawls/"/>
+    <link href="http://antulik.github.io/blog/2012/11/22/john-rawls/"/>
     <updated>2012-11-22T05:20:00+04:00</updated>
-    <id>http://antulik.com/blog/2012/11/22/john-rawls</id>
+    <id>http://antulik.github.io/blog/2012/11/22/john-rawls</id>
     <content type="html"><![CDATA[<p>Самый справедливый свод правил — тот, с которым согласится каждый человек, не зная заранее, какой властью он будет наделен</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Мы упрощаем вашу жизнь]]></title>
-    <link href="http://antulik.com/blog/2012/11/12/my-uproshhaem-vashu-zhizn/"/>
+    <link href="http://antulik.github.io/blog/2012/11/12/my-uproshhaem-vashu-zhizn/"/>
     <updated>2012-11-12T13:06:00+04:00</updated>
-    <id>http://antulik.com/blog/2012/11/12/my-uproshhaem-vashu-zhizn</id>
+    <id>http://antulik.github.io/blog/2012/11/12/my-uproshhaem-vashu-zhizn</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Больше улыбок - больше продаж]]></title>
-    <link href="http://antulik.com/blog/2012/11/10/bol-she-ulybok-bol-she-prodazh/"/>
+    <link href="http://antulik.github.io/blog/2012/11/10/bol-she-ulybok-bol-she-prodazh/"/>
     <updated>2012-11-10T15:53:00+04:00</updated>
-    <id>http://antulik.com/blog/2012/11/10/bol-she-ulybok-bol-she-prodazh</id>
+    <id>http://antulik.github.io/blog/2012/11/10/bol-she-ulybok-bol-she-prodazh</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Стоит ли быть «успешным»?]]></title>
-    <link href="http://antulik.com/blog/2011/10/13/stoit-li-byt-uspeshnym/"/>
+    <link href="http://antulik.github.io/blog/2011/10/13/stoit-li-byt-uspeshnym/"/>
     <updated>2011-10-13T13:52:00+04:00</updated>
-    <id>http://antulik.com/blog/2011/10/13/stoit-li-byt-uspeshnym</id>
+    <id>http://antulik.github.io/blog/2011/10/13/stoit-li-byt-uspeshnym</id>
     <content type="html"><![CDATA[<p><a href="http://habrahabr.ru/blogs/gtd/129863/">http://habrahabr.ru/blogs/gtd/129863/</a></p>
 
 <p>Как надоели эти тематические статьи о повышении результативности, мотивации и прочей чепухе. Зачем люди их пишут? Чтобы помочь тем, кто запутался в себе? Для тех, кому тяжело сосредоточиться? Вряд-ли это так.</p>

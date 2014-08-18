@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: hosts | Anton Katunin]]></title>
-  <link href="http://antulik.com/blog/categories/hosts/atom.xml" rel="self"/>
-  <link href="http://antulik.com/"/>
-  <updated>2014-08-18T21:52:56+04:00</updated>
-  <id>http://antulik.com/</id>
+  <link href="http://antulik.github.io/blog/categories/hosts/atom.xml" rel="self"/>
+  <link href="http://antulik.github.io/"/>
+  <updated>2014-08-18T21:54:35+04:00</updated>
+  <id>http://antulik.github.io/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
     <email><![CDATA[antulik@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Speed up POW DNS Lookup]]></title>
-    <link href="http://antulik.com/blog/2013/09/01/pow/"/>
+    <link href="http://antulik.github.io/blog/2013/09/01/pow/"/>
     <updated>2013-09-01T00:00:00+04:00</updated>
-    <id>http://antulik.com/blog/2013/09/01/pow</id>
+    <id>http://antulik.github.io/blog/2013/09/01/pow</id>
     <content type="html"><![CDATA[<p>I&rsquo;m using <a href="http://pow.cx/">POW</a> as a proxy to my local dev server in development. That gives me nice local *.dev domain names. However I&rsquo;ve noticed that it takes 10 seconds to load a singe page in Chrome. Of course, I thought, It does like 80 requests as each asset is served as a separate file in development. But after investigating it a bit more DNS lookup for each request was 3 seconds and for some reasons it was like that for every single http request.</p>
 
 <!--more-->

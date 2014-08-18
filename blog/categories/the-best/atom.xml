@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: the best | Anton Katunin]]></title>
-  <link href="http://antulik.com/blog/categories/the-best/atom.xml" rel="self"/>
-  <link href="http://antulik.com/"/>
-  <updated>2014-08-18T21:52:56+04:00</updated>
-  <id>http://antulik.com/</id>
+  <link href="http://antulik.github.io/blog/categories/the-best/atom.xml" rel="self"/>
+  <link href="http://antulik.github.io/"/>
+  <updated>2014-08-18T21:54:35+04:00</updated>
+  <id>http://antulik.github.io/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
     <email><![CDATA[antulik@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Steve Jobs 2005 Stanford]]></title>
-    <link href="http://antulik.com/blog/2011/10/30/steve-jobs-2005-stanford/"/>
+    <link href="http://antulik.github.io/blog/2011/10/30/steve-jobs-2005-stanford/"/>
     <updated>2011-10-30T11:03:00+04:00</updated>
-    <id>http://antulik.com/blog/2011/10/30/steve-jobs-2005-stanford</id>
+    <id>http://antulik.github.io/blog/2011/10/30/steve-jobs-2005-stanford</id>
     <content type="html"><![CDATA[<object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="http://3.gvt0.com/vi/UF8uR6Z6KLc/0.jpg" height="266" width="320"><param name="movie" value="http://www.youtube.com/v/UF8uR6Z6KLc&amp;fs=1&amp;source=uds"> <param name="bgcolor" value="#FFFFFF"> <embed width="320" height="266" src="http://www.youtube.com/v/UF8uR6Z6KLc&amp;fs=1&amp;source=uds" type="application/x-shockwave-flash"></embed></object>
 
 
@@ -27,9 +27,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Upside of Irrationality]]></title>
-    <link href="http://antulik.com/blog/2011/10/28/the-upside-of-irrationality/"/>
+    <link href="http://antulik.github.io/blog/2011/10/28/the-upside-of-irrationality/"/>
     <updated>2011-10-28T16:58:00+04:00</updated>
-    <id>http://antulik.com/blog/2011/10/28/the-upside-of-irrationality</id>
+    <id>http://antulik.github.io/blog/2011/10/28/the-upside-of-irrationality</id>
     <content type="html"><![CDATA[<p> <a href="http://danariely.files.wordpress.com/2010/03/theupsideofirrationality2.jpg"><img src="http://danariely.files.wordpress.com/2010/03/theupsideofirrationality2.jpg" alt="" /></a>
 &ndash; <a href="http://danariely.com/2010/03/10/announcing-my-new-book/">Dan Ariely&rsquo;s blog</a></p>
 ]]></content>
@@ -37,9 +37,9 @@
   
   <entry>
     <title type="html"><![CDATA[Predictably Irrational]]></title>
-    <link href="http://antulik.com/blog/2011/10/20/predictably-irrational/"/>
+    <link href="http://antulik.github.io/blog/2011/10/20/predictably-irrational/"/>
     <updated>2011-10-20T16:45:00+04:00</updated>
-    <id>http://antulik.com/blog/2011/10/20/predictably-irrational</id>
+    <id>http://antulik.github.io/blog/2011/10/20/predictably-irrational</id>
     <content type="html"><![CDATA[<p> <a href="http://upload.wikimedia.org/wikipedia/en/c/ca/Predictably_Irrational_Book_Cover.jpg"><img src="http://upload.wikimedia.org/wikipedia/en/c/ca/Predictably_Irrational_Book_Cover.jpg" alt="" /></a>_ <strong>Predictably Irrational: The Hidden Forces That Shape Our Decisions</strong> _ is a 2008 book by <a href="http://en.wikipedia.org/wiki/Dan_Ariely" title="Dan Ariely">Dan Ariely</a>, in which he challenges readers&#8217; assumptions about making decisions based on <a href="http://en.wikipedia.org/wiki/Rational_thought" title="Rational thought">rational thought</a>. Ariely explains, &ldquo;My goal, by the end of this book, is to help you fundamentally rethink what makes you and the people around you tick. I hope to lead you there by presenting a wide range of scientific experiments, findings, and anecdotes that are in many cases quite amusing. Once you see how systematic certain mistakes are&ndash;how we repeat them again and again&ndash;I think you will begin to learn how to avoid some of them&rdquo;</p>
 
 <p>&ndash; <a href="http://en.wikipedia.org/wiki/Predictably_Irrational">Wikipedia</a></p>
@@ -48,9 +48,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dan Ariely]]></title>
-    <link href="http://antulik.com/blog/2011/10/15/dan-ariely/"/>
+    <link href="http://antulik.github.io/blog/2011/10/15/dan-ariely/"/>
     <updated>2011-10-15T13:36:00+04:00</updated>
-    <id>http://antulik.com/blog/2011/10/15/dan-ariely</id>
+    <id>http://antulik.github.io/blog/2011/10/15/dan-ariely</id>
     <content type="html"><![CDATA[<h1><a href="http://danariely.com">http://danariely.com</a></h1>
 
 <h1>Beware conflicts of interest</h1>
@@ -76,9 +76,9 @@
   
   <entry>
     <title type="html"><![CDATA[30 Seconds To Mars]]></title>
-    <link href="http://antulik.com/blog/2011/10/10/30-seconds-to-mars/"/>
+    <link href="http://antulik.github.io/blog/2011/10/10/30-seconds-to-mars/"/>
     <updated>2011-10-10T13:16:00+04:00</updated>
-    <id>http://antulik.com/blog/2011/10/10/30-seconds-to-mars</id>
+    <id>http://antulik.github.io/blog/2011/10/10/30-seconds-to-mars</id>
     <content type="html"><![CDATA[<object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="http://3.gvt0.com/vi/mLqHDhF-O28/0.jpg" height="266" width="320"><param name="movie" value="http://www.youtube.com/v/mLqHDhF-O28&amp;fs=1&amp;source=uds"> <param name="bgcolor" value="#FFFFFF"> <embed width="480" height="320" src="http://www.youtube.com/v/mLqHDhF-O28&amp;fs=1&amp;source=uds" type="application/x-shockwave-flash"></embed></object>
 
 
