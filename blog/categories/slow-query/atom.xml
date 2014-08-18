@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: slow query | Anton Katunin]]></title>
-  <link href="http://antulik.github.io/blog/categories/slow-query/atom.xml" rel="self"/>
-  <link href="http://antulik.github.io/"/>
-  <updated>2014-08-18T21:54:35+04:00</updated>
-  <id>http://antulik.github.io/</id>
+  <link href="http://antulik.com/blog/categories/slow-query/atom.xml" rel="self"/>
+  <link href="http://antulik.com/"/>
+  <updated>2014-08-18T22:13:25+04:00</updated>
+  <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
     <email><![CDATA[antulik@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Order of columns in table index matters (postgres)]]></title>
-    <link href="http://antulik.github.io/blog/2013/06/30/postgres/"/>
+    <link href="http://antulik.com/blog/2013/06/30/postgres/"/>
     <updated>2013-06-30T00:00:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2013/06/30/postgres</id>
+    <id>http://antulik.com/blog/2013/06/30/postgres</id>
     <content type="html"><![CDATA[<p>Today was trying to figure out why my query was running very and very slow.</p>
 
 <!--more-->

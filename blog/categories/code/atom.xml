@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: code | Anton Katunin]]></title>
-  <link href="http://antulik.github.io/blog/categories/code/atom.xml" rel="self"/>
-  <link href="http://antulik.github.io/"/>
-  <updated>2014-08-18T21:54:35+04:00</updated>
-  <id>http://antulik.github.io/</id>
+  <link href="http://antulik.com/blog/categories/code/atom.xml" rel="self"/>
+  <link href="http://antulik.com/"/>
+  <updated>2014-08-18T22:13:25+04:00</updated>
+  <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
     <email><![CDATA[antulik@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Speed up POW DNS Lookup]]></title>
-    <link href="http://antulik.github.io/blog/2013/09/01/pow/"/>
+    <link href="http://antulik.com/blog/2013/09/01/pow/"/>
     <updated>2013-09-01T00:00:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2013/09/01/pow</id>
+    <id>http://antulik.com/blog/2013/09/01/pow</id>
     <content type="html"><![CDATA[<p>I&rsquo;m using <a href="http://pow.cx/">POW</a> as a proxy to my local dev server in development. That gives me nice local *.dev domain names. However I&rsquo;ve noticed that it takes 10 seconds to load a singe page in Chrome. Of course, I thought, It does like 80 requests as each asset is served as a separate file in development. But after investigating it a bit more DNS lookup for each request was 3 seconds and for some reasons it was like that for every single http request.</p>
 
 <!--more-->
@@ -44,9 +44,9 @@ First thing. I had &lsquo;default&rsquo; rule in pow to proxy port 3000 if now s
   
   <entry>
     <title type="html"><![CDATA[Report rake (>=0.9) exceptions to NewRelic]]></title>
-    <link href="http://antulik.github.io/blog/2013/08/08/rake-newrelic/"/>
+    <link href="http://antulik.com/blog/2013/08/08/rake-newrelic/"/>
     <updated>2013-08-08T00:00:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2013/08/08/rake-newrelic</id>
+    <id>http://antulik.com/blog/2013/08/08/rake-newrelic</id>
     <content type="html"><![CDATA[<p>NewRelic service is great for application monitoring and errors tracking. However it doesn&rsquo;t track rake exceptions by default. You can use <a href="https://airbrake.io">AirBrake</a> gem and service, but sometimes it&rsquo;s too much for you. Fortunately with a bit of ruby it&rsquo;s easy to do it yourself.</p>
 
 <!--more-->
@@ -86,9 +86,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[Zeus with RubyMine 6.0 Momiji]]></title>
-    <link href="http://antulik.github.io/blog/2013/08/05/zeus-with-ruby-mine/"/>
+    <link href="http://antulik.com/blog/2013/08/05/zeus-with-ruby-mine/"/>
     <updated>2013-08-05T00:00:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2013/08/05/zeus-with-ruby-mine</id>
+    <id>http://antulik.com/blog/2013/08/05/zeus-with-ruby-mine</id>
     <content type="html"><![CDATA[<p>The first version of RubyMine with Zeus support was released last week. This is a small tip how to get it working.</p>
 
 <!--more-->
@@ -118,18 +118,18 @@ end
   
   <entry>
     <title type="html"><![CDATA[My last three projects - wins and failures]]></title>
-    <link href="http://antulik.github.io/blog/2013/07/19/my-last-three-projects-wins-and-failures/"/>
+    <link href="http://antulik.com/blog/2013/07/19/my-last-three-projects-wins-and-failures/"/>
     <updated>2013-07-19T00:00:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2013/07/19/my-last-three-projects-wins-and-failures</id>
+    <id>http://antulik.com/blog/2013/07/19/my-last-three-projects-wins-and-failures</id>
     <content type="html"><![CDATA[<p><iframe src="http://www.slideshare.net/slideshow/embed_code/24406610 " width="595" height="446" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe> </p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Order of columns in table index matters (postgres)]]></title>
-    <link href="http://antulik.github.io/blog/2013/06/30/postgres/"/>
+    <link href="http://antulik.com/blog/2013/06/30/postgres/"/>
     <updated>2013-06-30T00:00:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2013/06/30/postgres</id>
+    <id>http://antulik.com/blog/2013/06/30/postgres</id>
     <content type="html"><![CDATA[<p>Today was trying to figure out why my query was running very and very slow.</p>
 
 <!--more-->

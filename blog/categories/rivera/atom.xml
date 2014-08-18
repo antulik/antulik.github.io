@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: rivera | Anton Katunin]]></title>
-  <link href="http://antulik.github.io/blog/categories/rivera/atom.xml" rel="self"/>
-  <link href="http://antulik.github.io/"/>
-  <updated>2014-08-18T21:54:35+04:00</updated>
-  <id>http://antulik.github.io/</id>
+  <link href="http://antulik.com/blog/categories/rivera/atom.xml" rel="self"/>
+  <link href="http://antulik.com/"/>
+  <updated>2014-08-18T22:13:25+04:00</updated>
+  <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
     <email><![CDATA[antulik@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Полуоффо бот]]></title>
-    <link href="http://antulik.github.io/blog/2009/07/14/poluoffo-bot/"/>
+    <link href="http://antulik.com/blog/2009/07/14/poluoffo-bot/"/>
     <updated>2009-07-14T14:32:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2009/07/14/poluoffo-bot</id>
+    <id>http://antulik.com/blog/2009/07/14/poluoffo-bot</id>
     <content type="html"><![CDATA[<p>Полуоффо бот</p>
 
 <p>Идея проста. На оффе бегает игрок, выделяет НПС, становится на его место и нажимает кнопку сохранить. Вся необходимая информация сохраняется. Затем ботом расставляются мобы на эмуле.<br/>
@@ -27,9 +27,9 @@
   
   <entry>
     <title type="html"><![CDATA[Статистика ивента на арене]]></title>
-    <link href="http://antulik.github.io/blog/2009/07/14/statistika-iventa-na-arene/"/>
+    <link href="http://antulik.com/blog/2009/07/14/statistika-iventa-na-arene/"/>
     <updated>2009-07-14T14:30:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2009/07/14/statistika-iventa-na-arene</id>
+    <id>http://antulik.com/blog/2009/07/14/statistika-iventa-na-arene</id>
     <content type="html"><![CDATA[<p>Немного статистики с ивента.<br/>
 При заходе в место с 1600 объектами и сотни игроков вылетает 132. После убратия объектов 132 не повторялась.<br/>
 Более менее стабильность наблюдалась при ПвП не более 80 человек.<br/>
@@ -44,9 +44,9 @@
   
   <entry>
     <title type="html"><![CDATA[Идея: Локальная база вова для теста]]></title>
-    <link href="http://antulik.github.io/blog/2009/07/14/ideya-lokal-naya-baza-vova-dlya-testa/"/>
+    <link href="http://antulik.com/blog/2009/07/14/ideya-lokal-naya-baza-vova-dlya-testa/"/>
     <updated>2009-07-14T14:27:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2009/07/14/ideya-lokal-naya-baza-vova-dlya-testa</id>
+    <id>http://antulik.com/blog/2009/07/14/ideya-lokal-naya-baza-vova-dlya-testa</id>
     <content type="html"><![CDATA[<p>Идея сделать что то типа базы казямы, только в данном случае база будет основываться на рапортах игроков, баготестеров и ГМов. Доступ к базе будет осуществляться в игре, посредством аддона. Так же можно сделать доступ на сайте по возможности. Т.к. база будет носить чисто информативный характер, то модераторами будут назначены баготестеры.</p>
 
 <p>Плюсы:<br/>
@@ -69,9 +69,9 @@
   
   <entry>
     <title type="html"><![CDATA[Tournament Addon commands]]></title>
-    <link href="http://antulik.github.io/blog/2009/07/14/tournament-addon-commands/"/>
+    <link href="http://antulik.com/blog/2009/07/14/tournament-addon-commands/"/>
     <updated>2009-07-14T14:26:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2009/07/14/tournament-addon-commands</id>
+    <id>http://antulik.com/blog/2009/07/14/tournament-addon-commands</id>
     <content type="html"><![CDATA[<p>Запрос на список турниров.<br/>
 .ut tournaments<br/>
 Возвращает<br/>
@@ -110,9 +110,9 @@ UTP: NAME, Level, Race, Class, PictureID, Rank, Description(подпись)</p>
   
   <entry>
     <title type="html"><![CDATA[CS inside, WoW outside]]></title>
-    <link href="http://antulik.github.io/blog/2009/04/23/cs-inside-wow-outside/"/>
+    <link href="http://antulik.com/blog/2009/04/23/cs-inside-wow-outside/"/>
     <updated>2009-04-23T13:42:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2009/04/23/cs-inside-wow-outside</id>
+    <id>http://antulik.com/blog/2009/04/23/cs-inside-wow-outside</id>
     <content type="html"><![CDATA[<p>Недавно после разговора с Охо мне пришла идея превратить вов в чисто пвп игру.</p>
 
 <p>Идея полностью копирует игру Counter Strike. Вот пример.</p>

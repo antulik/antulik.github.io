@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: presentation | Anton Katunin]]></title>
-  <link href="http://antulik.github.io/blog/categories/presentation/atom.xml" rel="self"/>
-  <link href="http://antulik.github.io/"/>
-  <updated>2014-08-18T21:54:35+04:00</updated>
-  <id>http://antulik.github.io/</id>
+  <link href="http://antulik.com/blog/categories/presentation/atom.xml" rel="self"/>
+  <link href="http://antulik.com/"/>
+  <updated>2014-08-18T22:13:25+04:00</updated>
+  <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
     <email><![CDATA[antulik@gmail.com]]></email>
@@ -15,27 +15,27 @@
   
   <entry>
     <title type="html"><![CDATA[My last three projects - wins and failures]]></title>
-    <link href="http://antulik.github.io/blog/2013/07/19/my-last-three-projects-wins-and-failures/"/>
+    <link href="http://antulik.com/blog/2013/07/19/my-last-three-projects-wins-and-failures/"/>
     <updated>2013-07-19T00:00:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2013/07/19/my-last-three-projects-wins-and-failures</id>
+    <id>http://antulik.com/blog/2013/07/19/my-last-three-projects-wins-and-failures</id>
     <content type="html"><![CDATA[<p><iframe src="http://www.slideshare.net/slideshow/embed_code/24406610 " width="595" height="446" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe> </p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[D3.js workshop]]></title>
-    <link href="http://antulik.github.io/blog/2013/03/02/d3js-workshop/"/>
+    <link href="http://antulik.com/blog/2013/03/02/d3js-workshop/"/>
     <updated>2013-03-02T00:00:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2013/03/02/d3js-workshop</id>
+    <id>http://antulik.com/blog/2013/03/02/d3js-workshop</id>
     <content type="html"><![CDATA[<p><iframe src="http://www.slideshare.net/slideshow/embed_code/16871946 " width="595" height="446" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe> </p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[D3.js mindblow]]></title>
-    <link href="http://antulik.github.io/blog/2013/03/02/d3js-mindblow/"/>
+    <link href="http://antulik.com/blog/2013/03/02/d3js-mindblow/"/>
     <updated>2013-03-02T00:00:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2013/03/02/d3js-mindblow</id>
+    <id>http://antulik.com/blog/2013/03/02/d3js-mindblow</id>
     <content type="html"><![CDATA[<p><iframe src="http://www.slideshare.net/slideshow/embed_code/16871890 " width="595" height="446" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe> </p>
 ]]></content>
   </entry>

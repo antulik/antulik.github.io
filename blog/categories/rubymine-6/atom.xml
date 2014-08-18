@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: rubymine 6 | Anton Katunin]]></title>
-  <link href="http://antulik.github.io/blog/categories/rubymine-6/atom.xml" rel="self"/>
-  <link href="http://antulik.github.io/"/>
-  <updated>2014-08-18T21:54:35+04:00</updated>
-  <id>http://antulik.github.io/</id>
+  <link href="http://antulik.com/blog/categories/rubymine-6/atom.xml" rel="self"/>
+  <link href="http://antulik.com/"/>
+  <updated>2014-08-18T22:13:25+04:00</updated>
+  <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
     <email><![CDATA[antulik@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Zeus with RubyMine 6.0 Momiji]]></title>
-    <link href="http://antulik.github.io/blog/2013/08/05/zeus-with-ruby-mine/"/>
+    <link href="http://antulik.com/blog/2013/08/05/zeus-with-ruby-mine/"/>
     <updated>2013-08-05T00:00:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2013/08/05/zeus-with-ruby-mine</id>
+    <id>http://antulik.com/blog/2013/08/05/zeus-with-ruby-mine</id>
     <content type="html"><![CDATA[<p>The first version of RubyMine with Zeus support was released last week. This is a small tip how to get it working.</p>
 
 <!--more-->

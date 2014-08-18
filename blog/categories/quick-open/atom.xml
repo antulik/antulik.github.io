@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: quick open | Anton Katunin]]></title>
-  <link href="http://antulik.github.io/blog/categories/quick-open/atom.xml" rel="self"/>
-  <link href="http://antulik.github.io/"/>
-  <updated>2014-08-18T21:54:35+04:00</updated>
-  <id>http://antulik.github.io/</id>
+  <link href="http://antulik.com/blog/categories/quick-open/atom.xml" rel="self"/>
+  <link href="http://antulik.com/"/>
+  <updated>2014-08-18T22:13:25+04:00</updated>
+  <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
     <email><![CDATA[antulik@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Quickly open files in iTerm with RubyMine on MacOS]]></title>
-    <link href="http://antulik.github.io/blog/2013/03/06/iterm/"/>
+    <link href="http://antulik.com/blog/2013/03/06/iterm/"/>
     <updated>2013-03-06T00:00:00+04:00</updated>
-    <id>http://antulik.github.io/blog/2013/03/06/iterm</id>
+    <id>http://antulik.com/blog/2013/03/06/iterm</id>
     <content type="html"><![CDATA[<p>You can use RubyMine for editing but still run tests in terminal. With this tip you can click path in terminal and open that file in RubyMine.</p>
 
 <!--more-->
