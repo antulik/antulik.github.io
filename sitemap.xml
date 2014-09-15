@@ -3,6 +3,24 @@
   
   
   <url>
+    <loc>http://antulik.com/blog/2014/09/14/differentiate-your-gem/</loc>
+    <lastmod>2014-09-14T00:00:00+04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://antulik.com/blog/2014/05/19/luche-bit-golodnim/</loc>
+    <lastmod>2014-05-19T00:00:00+04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://antulik.com/blog/2014/05/19/better-be-hungry/</loc>
+    <lastmod>2014-05-19T00:00:00+04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://antulik.com/blog/2014/03/01/the-most-valuable-skill-of-a-successful-entreprene/</loc>
     <lastmod>2014-03-01T11:56:00+04:00</lastmod>
     <priority>0.8</priority>
@@ -1067,21 +1085,21 @@
   
   <url>
     <loc>http://antulik.com/blog/archives/</loc>
-    <lastmod>2014-08-19T12:03:53+04:00</lastmod>
+    <lastmod>2014-09-15T21:08:46+04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://antulik.com/</loc>
-    <lastmod>2014-08-19T12:03:53+04:00</lastmod>
+    <lastmod>2014-09-15T21:08:46+04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://antulik.com/about/</loc>
-    <lastmod>2014-08-19T12:03:53+04:00</lastmod>
+    <lastmod>2014-09-15T21:08:46+04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

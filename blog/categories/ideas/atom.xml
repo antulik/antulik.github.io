@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ideas | Anton Katunin]]></title>
+  <link href="http://antulik.com/blog/categories/ideas/atom.xml" rel="self"/>
+  <link href="http://antulik.com/"/>
+  <updated>2014-09-15T21:08:46+04:00</updated>
+  <id>http://antulik.com/</id>
+  <author>
+    <name><![CDATA[Anton Katunin]]></name>
+    <email><![CDATA[antulik@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Differentiate your gem]]></title>
+    <link href="http://antulik.com/blog/2014/09/14/differentiate-your-gem/"/>
+    <updated>2014-09-14T00:00:00+04:00</updated>
+    <id>http://antulik.com/blog/2014/09/14/differentiate-your-gem</id>
+    <content type="html"><![CDATA[<p>Are you tired of seeing <em>yet another project</em> on github while there are ten others which do exactly the same thing? In this post I suggest we start to diffirentiate our projects.</p>
+
+<p>Projects like <a href="ruby-toolbox.com">Ruby Toolbox</a> make developers life much easiers by categorising gems and what&rsquo;s more important providing popularity information. It is important because developer can make make his own decision why one gem is better than other one.</p>
+
+<p>The first question I&rsquo;m looking answer for in such situation is <strong>how this gem or project on github is different from another one</strong>, almost identical as it seems at first.</p>
+
+<p>I believe every single library should have the first two sections in its readme file:</p>
+
+<ul>
+<li>What is it? And how can it make my life better?</li>
+<li>How is it different from competitor projects?</li>
+</ul>
+
+
+<p>So when you think your new project is going to change the world and there are none like it in existance. You can save yourself some time and delete it after <em>initial  commit</em>.</p>
+
+<p>Save time for your fellow developers, be honest and tell why we should and shouldn&rsquo;t use your library.</p>
+]]></content>
+  </entry>
+  
+</feed>

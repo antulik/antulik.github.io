@@ -9,7 +9,9 @@
   <meta name="author" content="Anton Katunin">
 
   
-  <meta name="description" content="If your facts are wrong but your logic is perfect, then your conclusions are inevitably false. Therefore, by making mistakes in your logic, you have &hellip;">
+  <meta name="description" content="I&rsquo;ve spent a lot of time setting up my host, would like to share my experience. So what we ve got:
+VPS box with ssh access
+Two websites, both &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +87,223 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/14/rvm-monit-passenger-nginx-multiple-rubies/">RVM + Monit + Passenger + Nginx + Multiple Rubies</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-14T17:29:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve spent a lot of time setting up my host, would like to share my experience.</p>
+
+<p>So what we ve got:<br/>
+VPS box with ssh access<br/>
+Two websites, both ruby on rails:<br/>
+1. Custom website (ruby 1.9.2 + rails 3)<br/>
+2. Redmine (ruby 1.8.7 + rails 2)<br/>
+Passeger - to run websites<br/>
+Monit - to do monitoring and management of processes</p>
+
+<p>VPS was already preconfigured with Nginx and ruby 1.9.2 as system wide setup, so there are no problems of running the first website, as it will work straight out of the box.</p>
+
+<p>The question is how to setup both web applications with different ruby versions.</p>
+
+<p>As we are hosting applications on different ruby versions, we cannot host them together on the same passenger, so we need to setup proxy on the system wide nginx to run the second website as a standalone application.</p>
+
+<p>The access to the second site will look like that:<br/>
+1. Request comes in to the global nginx<br/>
+2. The request is proxied to standalone Passenger, which is running on the second instance of nginx</p>
+
+<p>First of all we need to install 1.8.7 ruby on our host. The best way to do that is to use RVM, and install it locally as a current user. I would personally don&rsquo;t recommend to install it system wide. The are many good tutorial how to do that, so i&rsquo;ll skip over that:<br/>
+<a href="http://beginrescueend.com/rvm/install/">http://beginrescueend.com/rvm/install/</a></p>
+
+<p>After RVM is install and running 1.8.7 ruby version, we need to decide how we will host our second application. For this example I run standalone passenger, which is simply an instance of nginx running passenger with single application. This setup is enough, if there is only one site, otherwise we need to setup a separate second instance of nginx for 1.8.7 ruby.</p>
+
+<p>Because it is only possible to have a single ruby version active at the same time, it could lead into extra problems if we don&rsquo;t do it properly. The best way i&rsquo;ve found to do that is to wrap 1.8.7 ruby passenger into separate aplication.<br/>
+1. You need to switch rvm to the required ruby version (1.8.7 in our case)<br/>
+2. Install passenger gem if its not already installed<br/>
+3. Use RVM wrapper to wrap passenger gem, something like:</p>
+
+<p>rvm wrapper 1.8.7@default redmine passenger</p>
+
+<p>That command will create an executable in<br/>
+where/rvm/installed/.rvm/ruby-1.8.7/bin/</p>
+
+<p>Now you can test it. Navigate to folder with 1.8.7 application and type</p>
+
+<p>redmine_passenger start</p>
+
+<p>This will start passenger server for 1.8.7, and doesn&rsquo;t matter what is the current RVM environment is setup, this will always use 1.8.7 ruby. You should be able to see you application running at localhost:3000 (by default)</p>
+
+<p>So the second passenger is up and running, we need to setup a proxy on the system wide nging to route requests to the second. This is a good information: <a href="http://blog.phusion.nl/2010/09/21/phusion-passenger-running-multiple-ruby-versions/">http://blog.phusion.nl/2010/09/21/phusion-passenger-running-multiple-ruby-versions/</a></p>
+
+<p>Pretty much we need to add new virtual host to the system wide nginx.</p>
+
+<pre><code>server { listen 80; server_name www.site.com; root /webapps/site.com/public; location / { proxy_pass http://127.0.0.1:3000; proxy_set_header Host $host; }}
+</code></pre>
+
+<p>After nginx is restarted, all requests should be routed to the second passenger.</p>
+
+<p>At this point, it is all good, you some people can leave it here. The problem with the current implementation, the system wide nginx instance will start automatically after system start, but the second passenger we need to start manually.</p>
+
+<p>Solution is to use Monit.<br/>
+<a href="http://mmonit.com/monit/documentation/monit.html  ">http://mmonit.com/monit/documentation/monit.html  </a>
+Monit is simply is a separate process, which monitors other processes and makes sure all of the up and running.</p>
+
+<p>This is my monit configuration file to start and monitor passenger for 1.8.7 as a separate process.</p>
+
+<h1>Monit config:</h1>
+
+<p>check process redmine_passenger<br/>
+ with pidfile /var/rapp/redmine/passenger.3000.pid<br/>
+ start program = &ldquo;/bin/su - user -c &lsquo;/var/rapp/.rvm/bin/redmine_passenger start /var/rapp/redmine/ -a 127.0.0.1 -p 3000 -d -e production&rsquo; &rdquo;<br/>
+ stop program = &ldquo;/bin/su - user -c &lsquo;/var/rapp/.rvm/bin/redmine_passenger stop /var/rapp/redmine/&rsquo; &rdquo;</p>
+
+<p>Replace user with current user. Also notice that there is a space before and after user.</p>
+
+<p>And finally, if you are stuck, here are some good website, which helped me to get my solution.</p>
+
+<p>References:<br/>
+<a href="http://groups.google.com/group/rubyversionmanager/browse_thread/thread/d1a6c1f6396a8bf6/51afece4c8943912?#51afece4c8943912">http://groups.google.com/group/rubyversionmanager/browse_thread/thread/d1a6c1f6396a8bf6/51afece4c8943912?#51afece4c8943912</a></p>
+
+<p><a href="http://groups.google.com/group/rubyversionmanager/browse_thread/thread/d1a6c1f6396a8bf6/279b6dacdf898d0a?#279b6dacdf898d0a">http://groups.google.com/group/rubyversionmanager/browse_thread/thread/d1a6c1f6396a8bf6/279b6dacdf898d0a?#279b6dacdf898d0a</a></p>
+
+<p><a href="https://gist.github.com/960540">https://gist.github.com/960540</a></p>
+
+<p><a href="http://matthew.mceachen.us/blog/howto-make-system-wide-rvm-installations-work-with-cron-monit-delayed_job-and-passenger-1021.html">http://matthew.mceachen.us/blog/howto-make-system-wide-rvm-installations-work-with-cron-monit-delayed_job-and-passenger-1021.html</a></p>
+
+<p><a href="http://stackoverflow.com/questions/5863815/monit-rvm-thin-on-osx-linux">http://stackoverflow.com/questions/5863815/monit-rvm-thin-on-osx-linux</a></p>
+
+<p><a href="https://github.com/romanbsd/passenger_monit">https://github.com/romanbsd/passenger_monit</a></p>
+
+<p><a href="http://rushthinking.com/using-monit/">http://rushthinking.com/using-monit/</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/14/gate-s-law/">Gate's Law</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-14T09:25:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The only important information in a hierarchy is who knows what</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/13/life-is-too-short-to-be-little/">Life Is Too Short to Be Little</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-13T17:14:00+04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ol>
+<li>Life is too short not to do a little practical joking. Krista Allen</li>
+<li>The Span of Life is too short to be trifled away in unconcerning and unprofitable Matters. Mary Astell</li>
+<li>Life is too short to spend hoping that the perfectly arched eyebrow or hottest new lip shade will mask an ugly heart. Kevyn Aucoin</li>
+<li>Be patient and understanding. Life is too short to be vengeful or malicious. Phillips Brooks</li>
+<li>Life is too short to harbor any hostilities towards anybody. Peabo Bryson</li>
+<li>Life is too short, and I&rsquo;m Italian. I&rsquo;d much rather eat pasta and drink wine than be a size 0. Sophia Bush</li>
+<li>Life is too short to stuff a mushroom. Shirley Conran</li>
+<li>Life is too short to be little. Man is never so manly as when he feels deeply, acts boldly, and expresses himself with frankness and with fervor. Benjamin Disraeli</li>
+<li>Life is too short to be living somebody else&rsquo;s dream. Hugh Hefner</li>
+<li>Life is too short to blend in. Paris Hilton</li>
+<li>The only rule is don&rsquo;t be boring and dress cute wherever you go. Life is too short to blend in. Paris Hilton</li>
+<li>Life is too short not to experiment. Jamelia</li>
+<li>Life is too short to work so hard. Vivien Leigh</li>
+<li>I don&rsquo;t read such boring things. Life is too short. Gyorgy Ligeti</li>
+<li>Do what you love to do and give it your very best. Whether it&rsquo;s business or baseball, or the theater, or any field. If you don&rsquo;t love what you&rsquo;re doing and you can&rsquo;t give it your best, get out of it. Life is too short. You&rsquo;ll be an old man before you know it. Al Lopez</li>
+<li>Life is too short for a long story. Mary Wortley Montagu</li>
+<li>Life is too short to have anything but delusional notions about yourself. Gene Simmons</li>
+<li>Life is too short, and the time we waste in yawning never can be regained. Stendhal</li>
+<li>Life is too short to miss out on the beautiful things like a double cheeseburger. Channing Tatum</li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -355,122 +574,6 @@ The reverse is also true.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-  
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/18/cannon-s-canon/">Cannon's Canon</a></h1>
-      
-      
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-18T14:54:00+03:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Experience is what causes you to make new mistakes instead of old ones.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-  
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/16/segal-s-law/">Segal's Law</a></h1>
-      
-      
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-16T14:53:00+03:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A man with one watch knows what time it is.</p>
-
-<p>A man with two watches is never sure.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-  
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/07/gourd-s-axiom/">Gourd's Axiom</a></h1>
-      
-      
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-07T14:51:00+03:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A meeting is an event at which the minutes are kept and the hours are lost.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/12">&larr; Older</a>
@@ -488,23 +591,23 @@ The reverse is also true.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/09/14/differentiate-your-gem/">Differentiate your gem</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/19/luche-bit-golodnim/">Лучше быть голодным, чем есть все попало</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/19/better-be-hungry/">Better be hungry than eat whatever food</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/03/01/the-most-valuable-skill-of-a-successful-entreprene/">The most valuable skill of a successful entrepreneur</a>
       </li>
     
       <li class="post">
         <a href="/blog/2014/02/27/the-greatest-lesson-in-life-is-to-know-that-even-f/">The greatest lesson in life is to know that even fools are right sometimes.</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/27/following-your-passion-is-horrible-advice/">Following your Passion is Horrible Advice</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/27/the-red-queen-effect/">The Red Queen Effect</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/27/newport-s-law/">Newport's law</a>
       </li>
     
   </ul>

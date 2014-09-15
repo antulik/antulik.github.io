@@ -4,7 +4,7 @@
   <title><![CDATA[Category: code | Anton Katunin]]></title>
   <link href="http://antulik.com/blog/categories/code/atom.xml" rel="self"/>
   <link href="http://antulik.com/"/>
-  <updated>2014-08-19T12:03:53+04:00</updated>
+  <updated>2014-09-15T21:08:46+04:00</updated>
   <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Differentiate your gem]]></title>
+    <link href="http://antulik.com/blog/2014/09/14/differentiate-your-gem/"/>
+    <updated>2014-09-14T00:00:00+04:00</updated>
+    <id>http://antulik.com/blog/2014/09/14/differentiate-your-gem</id>
+    <content type="html"><![CDATA[<p>Are you tired of seeing <em>yet another project</em> on github while there are ten others which do exactly the same thing? In this post I suggest we start to diffirentiate our projects.</p>
+
+<p>Projects like <a href="ruby-toolbox.com">Ruby Toolbox</a> make developers life much easiers by categorising gems and what&rsquo;s more important providing popularity information. It is important because developer can make make his own decision why one gem is better than other one.</p>
+
+<p>The first question I&rsquo;m looking answer for in such situation is <strong>how this gem or project on github is different from another one</strong>, almost identical as it seems at first.</p>
+
+<p>I believe every single library should have the first two sections in its readme file:</p>
+
+<ul>
+<li>What is it? And how can it make my life better?</li>
+<li>How is it different from competitor projects?</li>
+</ul>
+
+
+<p>So when you think your new project is going to change the world and there are none like it in existance. You can save yourself some time and delete it after <em>initial  commit</em>.</p>
+
+<p>Save time for your fellow developers, be honest and tell why we should and shouldn&rsquo;t use your library.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Speed up POW DNS Lookup]]></title>
@@ -122,40 +147,6 @@ end
     <updated>2013-07-19T00:00:00+04:00</updated>
     <id>http://antulik.com/blog/2013/07/19/my-last-three-projects-wins-and-failures</id>
     <content type="html"><![CDATA[<p><iframe src="http://www.slideshare.net/slideshow/embed_code/24406610 " width="595" height="446" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe> </p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Order of columns in table index matters (postgres)]]></title>
-    <link href="http://antulik.com/blog/2013/06/30/postgres/"/>
-    <updated>2013-06-30T00:00:00+04:00</updated>
-    <id>http://antulik.com/blog/2013/06/30/postgres</id>
-    <content type="html"><![CDATA[<p>Today was trying to figure out why my query was running very and very slow.</p>
-
-<!--more-->
-
-
-<pre><code>SELECT "events".* FROM "events" WHERE "events"."calendar_id" = 24 AND (start &gt;= '2012-01-01 00:00:00.000000') AND (start &lt; '2013-01-01 00:00:00.000000') ORDER BY size desc LIMIT 200
-</code></pre>
-
-<p>So to break it down, we are sorting by one column (size) and filtering by two columns (calendar_id and start). And I already had index</p>
-
-<pre><code>add_index :events, [:calendar_id, :start]
-</code></pre>
-
-<p> Even though there is already index for filtering columns, it is not used because we are also sorting.</p>
-
-<p>So I&rsquo;ve changed my index to</p>
-
-<pre><code>add_index :events, [:calendar_id, :start, :size]
-</code></pre>
-
-<p>But it didn&rsquo;t make any difference!! The problem order of the columns in the index very important, as in the query it is always orders first, so the final result made a huge difference in perfomance:</p>
-
-<pre><code>add_index :events, [:size, :calendar_id, :start]
-</code></pre>
-
-<p>Lesson learnt, order of the columns in index is very important.</p>
 ]]></content>
   </entry>
   
