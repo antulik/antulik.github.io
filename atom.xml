@@ -4,7 +4,7 @@
   <title><![CDATA[Anton Katunin]]></title>
   <link href="http://antulik.com/atom.xml" rel="self"/>
   <link href="http://antulik.com/"/>
-  <updated>2014-09-20T15:23:42+04:00</updated>
+  <updated>2014-09-20T15:24:06+04:00</updated>
   <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
@@ -16,10 +16,10 @@
   <entry>
     
     <title type="html"><![CDATA[Multiple logins at once with Browser Profiles]]></title>
-    <link href="http://antulik.com/blog/2014/09/21/testing-with-multiple-users/"/>
+    <link href="http://antulik.com/blog/2014/09/21/multiple-logins-at-once/"/>
     
     <updated>2014-09-21T00:00:00+04:00</updated>
-    <id>http://antulik.com/blog/2014/09/21/testing-with-multiple-users</id>
+    <id>http://antulik.com/blog/2014/09/21/multiple-logins-at-once</id>
     
     <content type="html"><![CDATA[<p>Do you:</p>
 
