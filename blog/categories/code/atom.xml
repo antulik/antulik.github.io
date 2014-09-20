@@ -4,7 +4,7 @@
   <title><![CDATA[Category: code | Anton Katunin]]></title>
   <link href="http://antulik.com/blog/categories/code/atom.xml" rel="self"/>
   <link href="http://antulik.com/"/>
-  <updated>2014-09-15T21:08:46+04:00</updated>
+  <updated>2014-09-20T15:21:11+04:00</updated>
   <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Testing with multiple users at the same time]]></title>
+    <link href="http://antulik.com/blog/2014/09/21/testing-with-multiple-users/"/>
+    <updated>2014-09-21T00:00:00+04:00</updated>
+    <id>http://antulik.com/blog/2014/09/21/testing-with-multiple-users</id>
+    <content type="html"><![CDATA[<p>Do you:</p>
+
+<ul>
+<li>share same computer and login with other family members</li>
+<li>or you are testing website with login</li>
+</ul>
+
+
+<p>Then you should know what <em>browser profiles</em> are.</p>
+
+<p><strong>Browser profiles</strong> is a way to separate usage of the web browser per user. Just like any login system but without password. That means history, cache, cookies and as a result logins will be scope to a single user.</p>
+
+<p>This is ideal when you are testing website for different logins at the same time or just want to separate work and personal browsing history.</p>
+
+<p>Separation of browsing history might get more important with time as it&rsquo;s emerging trend for search enginge to personalise search results.</p>
+
+<p>Most popular browsers have browser profiles built in already:</p>
+
+<ol>
+<li><a href="https://support.google.com/chrome/answer/2364824?hl=en">Chrome</a> (Manage multiple users on Chrome)</li>
+<li><a href="https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-firefox-profiles">Firefox</a> (Multi profile access)</li>
+<li><a href="http://blogs.msdn.com/b/ie/archive/2009/05/06/session-cookies-sessionstorage-and-ie8.aspx">Internet Explorer</a> (Session Cookies, sessionStorage, and IE8 or “How can I log into two webmail accounts at the same time?”)</li>
+</ol>
+
+
+<p>Other references:</p>
+
+<ul>
+<li><a href="http://www.howtogeek.com/139705/how-to-use-multiple-browser-profiles-in-any-browser/">How to Use Multiple Browser Profiles in Any Browser</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Differentiate your gem]]></title>
@@ -138,15 +177,6 @@ end
 <p>That&rsquo;s it. Now you can run any test and it will use Zeus server. Happy lightning tests!</p>
 
 <p>Note: if you rerun recent test, it might still use old configuration. To fix that, go to <code>Run -&gt; Edit Configurations...</code> and remove all existing test configs under <code>RSpec</code> and <code>Test::Unit/Shoulda/Minitest</code> dropdowns.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My last three projects - wins and failures]]></title>
-    <link href="http://antulik.com/blog/2013/07/19/my-last-three-projects-wins-and-failures/"/>
-    <updated>2013-07-19T00:00:00+04:00</updated>
-    <id>http://antulik.com/blog/2013/07/19/my-last-three-projects-wins-and-failures</id>
-    <content type="html"><![CDATA[<p><iframe src="http://www.slideshare.net/slideshow/embed_code/24406610 " width="595" height="446" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe> </p>
 ]]></content>
   </entry>
   

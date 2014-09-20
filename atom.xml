@@ -4,7 +4,7 @@
   <title><![CDATA[Anton Katunin]]></title>
   <link href="http://antulik.com/atom.xml" rel="self"/>
   <link href="http://antulik.com/"/>
-  <updated>2014-09-15T21:08:46+04:00</updated>
+  <updated>2014-09-20T15:21:11+04:00</updated>
   <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
@@ -12,6 +12,71 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Testing with multiple users at the same time]]></title>
+    <link href="http://antulik.com/blog/2014/09/21/testing-with-multiple-users/"/>
+    
+    <updated>2014-09-21T00:00:00+04:00</updated>
+    <id>http://antulik.com/blog/2014/09/21/testing-with-multiple-users</id>
+    
+    <content type="html"><![CDATA[<p>Do you:</p>
+
+<ul>
+<li>share same computer and login with other family members</li>
+<li>or you are testing website with login</li>
+</ul>
+
+
+<p>Then you should know what <em>browser profiles</em> are.</p>
+
+<p><strong>Browser profiles</strong> is a way to separate usage of the web browser per user. Just like any login system but without password. That means history, cache, cookies and as a result logins will be scope to a single user.</p>
+
+<p>This is ideal when you are testing website for different logins at the same time or just want to separate work and personal browsing history.</p>
+
+<p>Separation of browsing history might get more important with time as it&rsquo;s emerging trend for search enginge to personalise search results.</p>
+
+<p>Most popular browsers have browser profiles built in already:</p>
+
+<ol>
+<li><a href="https://support.google.com/chrome/answer/2364824?hl=en">Chrome</a> (Manage multiple users on Chrome)</li>
+<li><a href="https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-firefox-profiles">Firefox</a> (Multi profile access)</li>
+<li><a href="http://blogs.msdn.com/b/ie/archive/2009/05/06/session-cookies-sessionstorage-and-ie8.aspx">Internet Explorer</a> (Session Cookies, sessionStorage, and IE8 or “How can I log into two webmail accounts at the same time?”)</li>
+</ol>
+
+
+<p>Other references:</p>
+
+<ul>
+<li><a href="http://www.howtogeek.com/139705/how-to-use-multiple-browser-profiles-in-any-browser/">How to Use Multiple Browser Profiles in Any Browser</a></li>
+</ul>
+
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[We all make choices. But in the end, our choices make us]]></title>
+    <link href="http://antulik.com/blog/2014/09/20/we-all-make-choices/"/>
+    
+    <updated>2014-09-20T00:00:00+04:00</updated>
+    <id>http://antulik.com/blog/2014/09/20/we-all-make-choices</id>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.businessinsider.com/how-successful-people-manage-their-time-2014-9?utm_source=pocket&amp;utm_medium=email&amp;utm_campaign=pockethits">How The Most Successful People Manage Their Time</a></p>
+
+<ol>
+<li>Do a time log. See how long things take and when your best windows are.</li>
+<li>Plan the whole week. Focus on your core competency and what makes you happy.</li>
+<li>Have a morning ritual that gets you closer to your long term goals.</li>
+<li>Set 3-5 anchor events for the weekend.</li>
+<li>Plan something fun for Sunday night.</li>
+</ol>
+
+]]></content>
+    
+  </entry>
   
   <entry>
     
@@ -447,68 +512,6 @@ brew uninstall mysql
     <content type="html"><![CDATA[<p>No more “yes”. It&rsquo;s either “HELL YEAH!” or “no”.</p>
 
 <p> <a href="http://pocket.co/s9fnm">http://sivers.org/hellyeah</a></p>
-]]></content>
-    
-  </entry>
-  
-  <entry>
-    
-    <title type="html"><![CDATA[Quickly open files in iTerm with RubyMine on MacOS]]></title>
-    <link href="http://antulik.com/blog/2013/03/06/iterm/"/>
-    
-    <updated>2013-03-06T00:00:00+04:00</updated>
-    <id>http://antulik.com/blog/2013/03/06/iterm</id>
-    
-    <content type="html"><![CDATA[<p>You can use RubyMine for editing but still run tests in terminal. With this tip you can click path in terminal and open that file in RubyMine.</p>
-
-<!--more-->
-
-
-<p>Open iTerm preferences -> Profiles -> Advanced -> Semantic History</p>
-
-<p>Select <strong>Run command</strong> and paste</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>/Applications/RubyMine.app/Contents/MacOS/rubymine <span class="se">\5</span> --line <span class="se">\2</span> <span class="se">\1</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So now when you see some paths in your terminal use <strong>Cmd+Left click</strong> to open it in RubyMine.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>rspec ./spec/models/profile_spec.rb:37
-</span><span class='line'>rspec ./spec/models/channel_spec.rb:13
-</span><span class='line'>rspec ./spec/models/stat_spec.rb:78
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Happy coding!</p>
-
-<p>References:</p>
-
-<ul>
-<li><a href="https://coderwall.com/p/b7e82q">Quickly open files in iTerm with Cmd+Click</a></li>
-<li><a href="http://www.jetbrains.com/ruby/webhelp/working-with-rubymine-features-from-command-line.html">Working with RubyMine Features from Command Line</a></li>
-</ul>
-
-]]></content>
-    
-  </entry>
-  
-  <entry>
-    
-    <title type="html"><![CDATA[D3.js workshop]]></title>
-    <link href="http://antulik.com/blog/2013/03/02/d3js-workshop/"/>
-    
-    <updated>2013-03-02T00:00:00+04:00</updated>
-    <id>http://antulik.com/blog/2013/03/02/d3js-workshop</id>
-    
-    <content type="html"><![CDATA[<iframe src="http://www.slideshare.net/slideshow/embed_code/16871946 " width="595" height="446" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen></iframe>
-
-
-<p></p>
 ]]></content>
     
   </entry>
