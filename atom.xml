@@ -4,7 +4,7 @@
   <title><![CDATA[Anton Katunin]]></title>
   <link href="http://antulik.com/atom.xml" rel="self"/>
   <link href="http://antulik.com/"/>
-  <updated>2014-09-20T15:24:06+04:00</updated>
+  <updated>2014-10-04T17:28:19+04:00</updated>
   <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
@@ -103,6 +103,34 @@
 <p>So when you think your new project is going to change the world and there are none like it in existance. You can save yourself some time and delete it after <em>initial  commit</em>.</p>
 
 <p>Save time for your fellow developers, be honest and tell why we should and shouldn&rsquo;t use your library.</p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Выйди из зоны комфорта. Измени свою жизнь]]></title>
+    <link href="http://antulik.com/blog/2014/07/13/viidi-iz-komfortoi-zoni/"/>
+    
+    <updated>2014-07-13T00:00:00+04:00</updated>
+    <id>http://antulik.com/blog/2014/07/13/viidi-iz-komfortoi-zoni</id>
+    
+    <content type="html"><![CDATA[<p>Брайан Трейси</p>
+
+<p><img class="center" src="http://antulik.com/images/posts/komf-big.png" title="" ></p>
+]]></content>
+    
+  </entry>
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Русская модель управления]]></title>
+    <link href="http://antulik.com/blog/2014/07/10/russkaya-model-ypravlenia/"/>
+    
+    <updated>2014-07-10T00:00:00+04:00</updated>
+    <id>http://antulik.com/blog/2014/07/10/russkaya-model-ypravlenia</id>
+    
+    <content type="html"><![CDATA[<p><img class="center" src="http://antulik.com/images/posts/russkaya-model-upravlenia-cover.jpg" title="" ></p>
 ]]></content>
     
   </entry>
@@ -482,36 +510,6 @@ brew uninstall mysql
     <content type="html"><![CDATA[<p>The principle of least astonishment (POLA/PLA) applies to user interface design, software design, and ergonomics. It is alternatively referred to as the rule or law of least astonishment, or the rule or principle of least surprise (POLS).</p>
 
 <p>&ndash; <a href="http://en.wikipedia.org/wiki/Principle_of_least_astonishment">Wiki</a></p>
-]]></content>
-    
-  </entry>
-  
-  <entry>
-    
-    <title type="html"><![CDATA[I don't know who discovered water, but it wasn't a fish.]]></title>
-    <link href="http://antulik.com/blog/2013/03/28/i-don-t-know-who-discovered-water-but-it-wasn-t-a-/"/>
-    
-    <updated>2013-03-28T05:22:00+04:00</updated>
-    <id>http://antulik.com/blog/2013/03/28/i-don-t-know-who-discovered-water-but-it-wasn-t-a-</id>
-    
-    <content type="html"><![CDATA[<p>I don&rsquo;t know who discovered water, but it wasn&rsquo;t a fish.</p>
-
-<p> <a href="http://pocket.co/s9fBS">http://www.ecotopia.com/<wbr></wbr>webpress/futures.htm</a></p>
-]]></content>
-    
-  </entry>
-  
-  <entry>
-    
-    <title type="html"><![CDATA[No more “yes”. It's either “HELL YEAH!” or “no”.]]></title>
-    <link href="http://antulik.com/blog/2013/03/27/no-more-yes-it-s-either-hell-yeah-or-no/"/>
-    
-    <updated>2013-03-27T05:17:00+04:00</updated>
-    <id>http://antulik.com/blog/2013/03/27/no-more-yes-it-s-either-hell-yeah-or-no</id>
-    
-    <content type="html"><![CDATA[<p>No more “yes”. It&rsquo;s either “HELL YEAH!” or “no”.</p>
-
-<p> <a href="http://pocket.co/s9fnm">http://sivers.org/hellyeah</a></p>
 ]]></content>
     
   </entry>

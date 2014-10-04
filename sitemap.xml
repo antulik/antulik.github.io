@@ -21,6 +21,18 @@
   </url>
   
   <url>
+    <loc>http://antulik.com/blog/2014/07/13/viidi-iz-komfortoi-zoni/</loc>
+    <lastmod>2014-07-13T00:00:00+04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://antulik.com/blog/2014/07/10/russkaya-model-ypravlenia/</loc>
+    <lastmod>2014-07-10T00:00:00+04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://antulik.com/blog/2014/05/19/luche-bit-golodnim/</loc>
     <lastmod>2014-05-19T00:00:00+04:00</lastmod>
     <priority>0.8</priority>
@@ -1097,21 +1109,21 @@
   
   <url>
     <loc>http://antulik.com/blog/archives/</loc>
-    <lastmod>2014-09-20T15:24:06+04:00</lastmod>
+    <lastmod>2014-10-04T17:28:19+04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://antulik.com/</loc>
-    <lastmod>2014-09-20T15:24:06+04:00</lastmod>
+    <lastmod>2014-10-04T17:28:19+04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://antulik.com/about/</loc>
-    <lastmod>2014-09-20T15:24:06+04:00</lastmod>
+    <lastmod>2014-10-04T17:28:19+04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

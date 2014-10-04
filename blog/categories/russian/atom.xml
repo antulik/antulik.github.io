@@ -4,7 +4,7 @@
   <title><![CDATA[Category: russian | Anton Katunin]]></title>
   <link href="http://antulik.com/blog/categories/russian/atom.xml" rel="self"/>
   <link href="http://antulik.com/"/>
-  <updated>2014-09-20T15:24:06+04:00</updated>
+  <updated>2014-10-04T17:28:19+04:00</updated>
   <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Выйди из зоны комфорта. Измени свою жизнь]]></title>
+    <link href="http://antulik.com/blog/2014/07/13/viidi-iz-komfortoi-zoni/"/>
+    <updated>2014-07-13T00:00:00+04:00</updated>
+    <id>http://antulik.com/blog/2014/07/13/viidi-iz-komfortoi-zoni</id>
+    <content type="html"><![CDATA[<p>Брайан Трейси</p>
+
+<p><img class="center" src="/images/posts/komf-big.png" title="" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Русская модель управления]]></title>
+    <link href="http://antulik.com/blog/2014/07/10/russkaya-model-ypravlenia/"/>
+    <updated>2014-07-10T00:00:00+04:00</updated>
+    <id>http://antulik.com/blog/2014/07/10/russkaya-model-ypravlenia</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/images/posts/russkaya-model-upravlenia-cover.jpg" title="" ></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Лучше быть голодным, чем есть все попало]]></title>
@@ -40,24 +60,6 @@
     <updated>2012-11-22T05:20:00+04:00</updated>
     <id>http://antulik.com/blog/2012/11/22/john-rawls</id>
     <content type="html"><![CDATA[<p>Самый справедливый свод правил — тот, с которым согласится каждый человек, не зная заранее, какой властью он будет наделен</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Мы упрощаем вашу жизнь]]></title>
-    <link href="http://antulik.com/blog/2012/11/12/my-uproshhaem-vashu-zhizn/"/>
-    <updated>2012-11-12T13:06:00+04:00</updated>
-    <id>http://antulik.com/blog/2012/11/12/my-uproshhaem-vashu-zhizn</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Больше улыбок - больше продаж]]></title>
-    <link href="http://antulik.com/blog/2012/11/10/bol-she-ulybok-bol-she-prodazh/"/>
-    <updated>2012-11-10T15:53:00+04:00</updated>
-    <id>http://antulik.com/blog/2012/11/10/bol-she-ulybok-bol-she-prodazh</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
