@@ -9,6 +9,12 @@
   </url>
   
   <url>
+    <loc>http://antulik.com/blog/2014/11/09/nonviolent-communication-the-language-of-life/</loc>
+    <lastmod>2014-11-09T00:00:00+03:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://antulik.com/blog/2014/09/21/multiple-logins-at-once/</loc>
     <lastmod>2014-09-21T00:00:00+04:00</lastmod>
     <priority>0.8</priority>
@@ -1115,21 +1121,21 @@
   
   <url>
     <loc>http://antulik.com/blog/archives/</loc>
-    <lastmod>2014-11-09T12:31:57+03:00</lastmod>
+    <lastmod>2014-11-09T13:10:57+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://antulik.com/</loc>
-    <lastmod>2014-11-09T12:31:57+03:00</lastmod>
+    <lastmod>2014-11-09T13:10:57+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://antulik.com/about/</loc>
-    <lastmod>2014-11-09T12:31:57+03:00</lastmod>
+    <lastmod>2014-11-09T13:10:57+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

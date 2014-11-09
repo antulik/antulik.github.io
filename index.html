@@ -137,63 +137,61 @@
 
 <p>Do you see it? It&rsquo;s not obvious is it? How about these alternatives:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Merchant</span>
-</span><span class='line'>  <span class="k">module</span> <span class="nn">Reports</span>
-</span><span class='line'>    <span class="k">class</span> <span class="nc">PostsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
-</span><span class='line'>    <span class="c1"># some code here</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Merchant::Reports</span>
-</span><span class='line'>  <span class="k">class</span> <span class="nc">PostsController</span> <span class="o">&lt;</span> <span class="no">Merchant</span><span class="o">::</span><span class="no">ApplicationController</span>
-</span><span class='line'>  <span class="c1"># some code here</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Merchant</span><span class="o">::</span><span class="no">Reports</span><span class="o">::</span><span class="no">PostsController</span> <span class="o">&lt;</span> <span class="no">Merchant</span><span class="o">::</span><span class="no">ApplicationController</span>
-</span><span class='line'>  <span class="c1"># some code here</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>All of these work except the first one. What&rsquo;s going on here? My guess will be</p>
-
-<ol>
-<li>Rails loads <code>Merchant::Reports::PostsController</code> controller</li>
-<li>It looks for <code>Merchant::ApplicationController</code> and loads it</li>
-<li><code>Merchant::ApplicationController</code> somehow triggers the load of <code>Merchant</code> module, which loads all classes in it.</li>
-<li>repeat</li>
-<li>Show <code>Circular dependency detected while autoloading constant</code> error</li>
-</ol>
-
-
-<p>So the fix was to rewrite it with different ruby style.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/11/09/ciruclar-dependency-in-rails/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2014/11/09/nonviolent-communication-the-language-of-life/">Nonviolent Communication: A Language of Life, Second Edition</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-09T00:00:00+03:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/images/posts/nonviolent-communication.jpg" title="" ></p>
+
+<p>book by Marshall B. Rosenberg</p>
+
+<p>This is one the best books I&rsquo;ve ever read. I&rsquo;ve read few dozens of self improvement and psychology books, but did not have a clue what this book is talking about. I would recommend it to everyone, including teenagers.</p>
+
+<p>I did a small experiment and after reading each chapter I&rsquo;ve created a summary list of highlights, first as a lesson for me to revisit each chapter and short list I could come back to in the future.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/11/09/nonviolent-communication-the-language-of-life/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -563,47 +561,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-  
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/27/the-greatest-lesson-in-life-is-to-know-that-even-f/">The Greatest Lesson in Life Is to Know That Even Fools Are Right Sometimes.</a></h1>
-      
-      
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-27T22:50:00+04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><blockquote><p>The greatest lesson in life is to know that even fools are right sometimes.</p></blockquote>
-
-<p>&ndash; Churchill<br/>
-&ndash; via  <a href="http://theweek.com/article/index/256021/5-ways-to-build-a-good-relationship-with-anyone">the week</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -623,6 +580,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2014/11/09/nonviolent-communication-the-language-of-life/">Nonviolent Communication: A Language of Life, Second Edition</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/09/21/multiple-logins-at-once/">Multiple logins at once with Browser Profiles</a>
       </li>
     
@@ -632,10 +593,6 @@
     
       <li class="post">
         <a href="/blog/2014/09/14/differentiate-your-gem/">Differentiate your gem</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/07/13/viidi-iz-komfortoi-zoni/">Выйди из зоны комфорта. Измени свою жизнь</a>
       </li>
     
   </ul>
