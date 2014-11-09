@@ -4,7 +4,7 @@
   <title><![CDATA[Anton Katunin]]></title>
   <link href="http://antulik.com/atom.xml" rel="self"/>
   <link href="http://antulik.com/"/>
-  <updated>2014-10-04T17:28:19+04:00</updated>
+  <updated>2014-11-09T12:31:57+03:00</updated>
   <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
@@ -12,6 +12,94 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Circular dependency in Rails]]></title>
+    <link href="http://antulik.com/blog/2014/11/09/ciruclar-dependency-in-rails/"/>
+    
+    <updated>2014-11-09T11:01:39+03:00</updated>
+    <id>http://antulik.com/blog/2014/11/09/ciruclar-dependency-in-rails</id>
+    
+    <content type="html"><![CDATA[<p>This is an interesing bug I&rsquo;ve encountered this week. While our Rails application was working in development it was completely broken in UAT environment (which is 99% production like)</p>
+
+<p>We were getting <code>Circular dependency detected while autoloading constant</code> error on all of our reports.</p>
+
+<p>Not so long ago we&rsquo;ve extracted group of controllers in its own rails engine with isolated namespace <code>Merchant</code>. After some investigation we&rsquo;ve spotted the bug, let&rsquo;s see if you can find it.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Merchant</span>
+</span><span class='line'>  <span class="k">class</span> <span class="nc">Reports</span><span class="o">::</span><span class="no">PostsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+</span><span class='line'>  <span class="c1"># some code here</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Do you see it? It&rsquo;s not obvious is it? How about these alternatives:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Merchant</span>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">Reports</span>
+</span><span class='line'>    <span class="k">class</span> <span class="nc">PostsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+</span><span class='line'>    <span class="c1"># some code here</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Merchant::Reports</span>
+</span><span class='line'>  <span class="k">class</span> <span class="nc">PostsController</span> <span class="o">&lt;</span> <span class="no">Merchant</span><span class="o">::</span><span class="no">ApplicationController</span>
+</span><span class='line'>  <span class="c1"># some code here</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Merchant</span><span class="o">::</span><span class="no">Reports</span><span class="o">::</span><span class="no">PostsController</span> <span class="o">&lt;</span> <span class="no">Merchant</span><span class="o">::</span><span class="no">ApplicationController</span>
+</span><span class='line'>  <span class="c1"># some code here</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>All of these work except the first one. What&rsquo;s going on here? My guess will be</p>
+
+<ol>
+<li>Rails loads <code>Merchant::Reports::PostsController</code> controller</li>
+<li>It looks for <code>Merchant::ApplicationController</code> and loads it</li>
+<li><code>Merchant::ApplicationController</code> somehow triggers the load of <code>Merchant</code> module, which loads all classes in it.</li>
+<li>repeat</li>
+<li>Show <code>Circular dependency detected while autoloading constant</code> error</li>
+</ol>
+
+
+<p>So the fix was to rewrite it with different ruby style.</p>
+]]></content>
+    
+  </entry>
   
   <entry>
     
@@ -495,21 +583,6 @@ brew uninstall mysql
 
 <pre><code>gem install mysql2
 </code></pre>
-]]></content>
-    
-  </entry>
-  
-  <entry>
-    
-    <title type="html"><![CDATA[Principle of least astonishment]]></title>
-    <link href="http://antulik.com/blog/2013/04/29/principle-of-least-astonishment/"/>
-    
-    <updated>2013-04-29T03:38:00+04:00</updated>
-    <id>http://antulik.com/blog/2013/04/29/principle-of-least-astonishment</id>
-    
-    <content type="html"><![CDATA[<p>The principle of least astonishment (POLA/PLA) applies to user interface design, software design, and ergonomics. It is alternatively referred to as the rule or law of least astonishment, or the rule or principle of least surprise (POLS).</p>
-
-<p>&ndash; <a href="http://en.wikipedia.org/wiki/Principle_of_least_astonishment">Wiki</a></p>
 ]]></content>
     
   </entry>
