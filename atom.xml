@@ -4,7 +4,7 @@
   <title><![CDATA[Anton Katunin]]></title>
   <link href="http://antulik.com/atom.xml" rel="self"/>
   <link href="http://antulik.com/"/>
-  <updated>2015-01-17T14:26:06+03:00</updated>
+  <updated>2015-01-17T16:56:35+03:00</updated>
   <id>http://antulik.com/</id>
   <author>
     <name><![CDATA[Anton Katunin]]></name>
@@ -43,11 +43,11 @@
   
   <entry>
     
-    <title type="html"><![CDATA[Принцип спермотозоида]]></title>
-    <link href="http://antulik.com/blog/2015/01/11/princip-spermatozoida%20copy%201/"/>
+    <title type="html"><![CDATA[Принцип сперматозоида]]></title>
+    <link href="http://antulik.com/blog/2015/01/11/princip-spermatozoida/"/>
     
     <updated>2015-01-11T00:00:00+03:00</updated>
-    <id>http://antulik.com/blog/2015/01/11/princip-spermatozoida copy 1</id>
+    <id>http://antulik.com/blog/2015/01/11/princip-spermatozoida</id>
     
     <content type="html"><![CDATA[<p><img class="center" src="http://antulik.com/images/posts/princip-spermatozoida.jpg" title="" ></p>
 ]]></content>
