@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Debugging Poltergeist and PhantomJS - Anton Katunin</title>
+  <meta name="author" content="Anton Katunin">
+
+  
+  <meta name="description" content="Recently at Opensight we had weird issue with our integration tests. When we run single test it succeeds, but when whole suit it fails. It was &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://antulik.com/blog/2015/05/27/debugging-poltergeist">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Anton Katunin" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-53880939-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner">
+	<div class="header-title"><a href="/">Anton Katunin</a></div>
+
+
+	<br><div class="header-subtitle">Lifeline of coincidence</div>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:antulik.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <nav role="navigation" class="nav-bottom"><ul class="main-navigation">
+    <li><a href="/blog/categories/code/">Code</a></li>
+    <li><a href="/blog/categories/presentation/">Presentations</a></li>
+    <li><a href="/blog/categories/russian/">Russian Posts</a></li>
+</ul>
+</nav>
+
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+  
+    
+      <h1 class="entry-title">Debugging Poltergeist and PhantomJS</h1>
+    
+  
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-27T00:00:00+03:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Recently at Opensight we had weird issue with our integration tests. When we run single test it succeeds, but when whole suit it fails.</p>
+
+<p>It was failing on the same &ldquo;terms and conditions&rdquo; page where we expect &lsquo;Accept&rsquo; button: <code>could not find element Accept</code></p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">click_button</span> <span class="s1">&#39;Accept&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+
+
+<!--more-->
+
+
+<p>So we started digging. First of all I&rsquo;ve verified that response from all requests is the same.</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">after_filter</span> <span class="k">do</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="n">response</span><span class="o">.</span><span class="n">body</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>And in fact it was the same all the time.</p>
+
+<p>The next step was to verify what html is received by <code>PhantomJS</code></p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">puts</span> <span class="s2">&quot;html=</span><span class="si">#{</span><span class="n">page</span><span class="o">.</span><span class="n">html</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="n">click_button</span> <span class="s1">&#39;Accept&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Strangely enough the first time it was proper html, but after it was empty html.</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Very strange indeed. The next step was to debug PhantomJS and Poltergeist.</p>
+
+<p>Poltergeist has the option to debug network requests, so we can print to log.</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">page</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">network_traffic</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">r</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">r</span><span class="o">.</span><span class="n">response_parts</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">resp</span><span class="o">|</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="n">resp</span><span class="o">.</span><span class="n">inspect</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="n">page</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">clear_network_traffic</span>
+</span><span class='line'><span class="n">click_button</span> <span class="s1">&#39;Accept&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>After looking at response code, we&rsquo;ve found that the first request it gets <code>200 Ok</code> response code. But the following requests to the same page <code>304 Non modified</code>.</p>
+
+<p>Aha! Bingo! It looks it&rsquo;s something to do with caching. Let&rsquo;s try to enable <code>disk-cache</code>.</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Capybara</span><span class="o">.</span><span class="n">register_driver</span> <span class="ss">:poltergeist</span> <span class="k">do</span> <span class="o">|</span><span class="n">app</span><span class="o">|</span>
+</span><span class='line'>  <span class="no">Capybara</span><span class="o">::</span><span class="no">Poltergeist</span><span class="o">::</span><span class="no">Driver</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">app</span><span class="p">,</span>
+</span><span class='line'>    <span class="ss">:phantomjs_options</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;--disk-cache=true&#39;</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'>  <span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="no">Capybara</span><span class="o">.</span><span class="n">javascript_driver</span> <span class="o">=</span> <span class="ss">:poltergeist</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Bingo Two!! Now the whole test suit works as expected.</p>
+
+<h2>Summary</h2>
+
+<p>It seems like a bug in PhantomJS 2.0 so that cache is not stored, while it should be.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Anton Katunin</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-27T00:00:00+03:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/code/'>code</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://antulik.com/blog/2015/05/27/debugging-poltergeist/" data-via="antulik" data-counturl="http://antulik.com/blog/2015/05/27/debugging-poltergeist/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/05/20/brain-that-changes-itself/" title="Previous Post: Brain that changes itself">&laquo; Brain that changes itself</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/05/27/debugging-poltergeist/">Debugging Poltergeist and PhantomJS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/20/brain-that-changes-itself/">Brain that changes itself</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/10/4-hour-work-week/">4 hour work week</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/17/the-honest-truth-about-dishonesty/">The Honest Truth About Dishonesty</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/15/psihologicheskoe-aikido/">Психологическое айкидо</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/antulik">@antulik</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'antulik',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 -  Anton Katunin <br/>
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> + <a href="https://github.com/ioveracker/mnml">mnml</a>.
+	  
+  </span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'antulik';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://antulik.com/blog/2015/05/27/debugging-poltergeist/';
+        var disqus_url = 'http://antulik.com/blog/2015/05/27/debugging-poltergeist/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

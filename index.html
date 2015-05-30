@@ -9,8 +9,7 @@
   <meta name="author" content="Anton Katunin">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="Recently at Opensight we had weird issue with our integration tests. When we run single test it succeeds, but when whole suit it fails. It was &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +85,134 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2015/05/27/debugging-poltergeist/">Debugging Poltergeist and PhantomJS</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-27T00:00:00+03:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Recently at Opensight we had weird issue with our integration tests. When we run single test it succeeds, but when whole suit it fails.</p>
+
+<p>It was failing on the same &ldquo;terms and conditions&rdquo; page where we expect &lsquo;Accept&rsquo; button: <code>could not find element Accept</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">click_button</span> <span class="s1">&#39;Accept&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/05/27/debugging-poltergeist/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2015/05/20/brain-that-changes-itself/">Brain That Changes Itself</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-20T00:00:00+03:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/images/posts/brain-that-changes-itself.jpg"></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/blog/2015/05/10/4-hour-work-week/">4 Hour Work Week</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-10T00:00:00+03:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/images/posts/4-hour-work-week.jpg"></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -440,147 +567,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-  
-    
-      <h1 class="entry-title"><a href="/blog/2014/09/20/we-all-make-choices/">We All Make Choices. But in the End, Our Choices Make Us</a></h1>
-      
-      
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-20T00:00:00+04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://www.businessinsider.com/how-successful-people-manage-their-time-2014-9?utm_source=pocket&amp;utm_medium=email&amp;utm_campaign=pockethits">How The Most Successful People Manage Their Time</a></p>
-
-<ol>
-<li>Do a time log. See how long things take and when your best windows are.</li>
-<li>Plan the whole week. Focus on your core competency and what makes you happy.</li>
-<li>Have a morning ritual that gets you closer to your long term goals.</li>
-<li>Set 3-5 anchor events for the weekend.</li>
-<li>Plan something fun for Sunday night.</li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-  
-    
-      <h1 class="entry-title"><a href="/blog/2014/09/14/differentiate-your-gem/">Differentiate Your Gem</a></h1>
-      
-      
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-14T00:00:00+04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Are you tired of seeing <em>yet another project</em> on github while there are ten others which do exactly the same thing? In this post I suggest we start to diffirentiate our projects.</p>
-
-<p>Projects like <a href="ruby-toolbox.com">Ruby Toolbox</a> make developers life much easiers by categorising gems and what&rsquo;s more important providing popularity information. It is important because developer can make make his own decision why one gem is better than other one.</p>
-
-<p>The first question I&rsquo;m looking answer for in such situation is <strong>how this gem or project on github is different from another one</strong>, almost identical as it seems at first.</p>
-
-<p>I believe every single library should have the first two sections in its readme file:</p>
-
-<ul>
-<li>What is it? And how can it make my life better?</li>
-<li>How is it different from competitor projects?</li>
-</ul>
-
-
-<p>So when you think your new project is going to change the world and there are none like it in existance. You can save yourself some time and delete it after <em>initial  commit</em>.</p>
-
-<p>Save time for your fellow developers, be honest and tell why we should and shouldn&rsquo;t use your library.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-  
-    
-      <h1 class="entry-title"><a href="/blog/2014/07/13/viidi-iz-komfortoi-zoni/">Выйди из зоны комфорта. Измени свою жизнь</a></h1>
-      
-      
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-13T00:00:00+04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Брайан Трейси</p>
-
-<p><img class="center" src="/images/posts/komf-big.png" title="" ></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -596,23 +582,23 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/05/27/debugging-poltergeist/">Debugging Poltergeist and PhantomJS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/20/brain-that-changes-itself/">Brain that changes itself</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/10/4-hour-work-week/">4 hour work week</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/17/the-honest-truth-about-dishonesty/">The Honest Truth About Dishonesty</a>
       </li>
     
       <li class="post">
         <a href="/blog/2015/01/15/psihologicheskoe-aikido/">Психологическое айкидо</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/11/princip-spermatozoida/">Принцип сперматозоида</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/12/13/sredstvo-ot-bednosti/">Средство от бедности</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/09/ciruclar-dependency-in-rails/">Circular dependency in Rails</a>
       </li>
     
   </ul>
